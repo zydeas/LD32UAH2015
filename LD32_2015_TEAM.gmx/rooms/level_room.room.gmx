@@ -119,6 +119,7 @@
     <instance objName="wall_obj" x="1056" y="704" name="inst_72173F77" locked="0" code="" scaleX="6" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="wall_obj" x="608" y="416" name="inst_A83516DF" locked="0" code="" scaleX="8" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="camera_obj" x="0" y="0" name="inst_4A4D46E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="invisible_enemy_spawner_obj" x="480" y="416" name="inst_B347A8D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

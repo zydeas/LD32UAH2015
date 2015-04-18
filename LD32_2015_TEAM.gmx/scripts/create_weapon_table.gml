@@ -40,4 +40,3 @@ ds_map_add(rocket, "scaleX", 1);
 ds_map_add(rocket, "scaleY", 1);
 ds_map_add(rocket, "splash", 20);
 ds_map_add(rocket, "damageType", "Explosive");
-
