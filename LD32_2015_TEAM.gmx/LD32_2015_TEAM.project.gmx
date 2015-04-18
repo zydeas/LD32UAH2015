@@ -10,22 +10,29 @@
     <sprite>sprites\player_mask_spr</sprite>
     <sprite>sprites\enemy_mask_spr</sprite>
     <sprite>sprites\spawner_mask_spr</sprite>
+    <sprite>sprites\projectile_spr</sprite>
+    <sprite>sprites\weapon_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
+    <script>scripts\create_weapon_table.gml</script>
+    <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\enemy_parent_obj</object>
     <object>objects\player_obj</object>
     <object>objects\enemy_melee_obj</object>
+    <object>objects\player_obj</object>
     <object>objects\obj_solidbrick</object>
     <object>objects\enemy_singleshot_obj</object>
     <object>objects\solid_obj</object>
     <object>objects\enemy_shotgun_obj</object>
     <object>objects\enemy_rocket_obj</object>
     <object>objects\enemy_spawner_obj</object>
+    <object>objects\projectile_obj</object>
+    <object>objects\weapon_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
