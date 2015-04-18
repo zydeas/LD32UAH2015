@@ -21,23 +21,30 @@
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\solid_obj</object>
+<<<<<<< HEAD
     <object>objects\enemy_parent_obj</object>
-      <object>objects\enemy_parent_obj</object>
-      <object>objects\enemy_parent_obj</object>
-      <object>objects\enemy_melee_obj</object>
-      <object>objects\enemy_singleshot_obj</object>
+    <object>objects\player_obj</object>
     <object>objects\enemy_melee_obj</object>
-      <object>objects\enemy_shotgun_obj</object>
-      <object>objects\enemy_melee_obj</object>
-      <object>objects\enemy_rocket_obj</object>
+    <object>objects\player_obj</object>
+    <object>objects\obj_solidbrick</object>
     <object>objects\enemy_singleshot_obj</object>
+    <object>objects\solid_obj</object>
+    <object>objects\enemy_shotgun_obj</object>
+    <object>objects\enemy_rocket_obj</object>
     <object>objects\enemy_spawner_obj</object>
     <object>objects\projectile_obj</object>
     <object>objects\weapon_obj</object>
+=======
+    <object>objects\solid_obj</object>
+    <object>objects\enemy_parent_obj</object>
+    <object>objects\enemy_melee_obj</object>
+    <object>objects\enemy_singleshot_obj</object>
+    <object>objects\enemy_shotgun_obj</object>
+    <object>objects\enemy_rocket_obj</object>
     <object>objects\player_obj</object>
     <object>objects\wall_obj</object>
     <object>objects\camera_obj</object>
+>>>>>>> clkerl
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
