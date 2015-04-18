@@ -22,7 +22,8 @@
     <object>objects\enemy_shotgun_obj</object>
     <object>objects\enemy_rocket_obj</object>
     <object>objects\player_obj</object>
-    <object>objects\obj_solidbrick</object>
+    <object>objects\wall_obj</object>
+    <object>objects\camera_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
