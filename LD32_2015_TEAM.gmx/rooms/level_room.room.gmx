@@ -83,6 +83,7 @@
     <instance objName="obj_solidbrick" x="256" y="160" name="inst_6B2ABA1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solidbrick" x="256" y="128" name="inst_7A9E3602" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="player_obj" x="288" y="288" name="inst_3FD32304" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="enemy_spawner_obj" x="480" y="32" name="inst_FAC9CE05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
