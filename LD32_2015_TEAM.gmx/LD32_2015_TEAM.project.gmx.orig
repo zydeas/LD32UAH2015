@@ -21,30 +21,34 @@
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_solidbrick</object>
-    <object>objects\solid_obj</object>
+<<<<<<< HEAD
     <object>objects\enemy_parent_obj</object>
+    <object>objects\player_obj</object>
     <object>objects\enemy_melee_obj</object>
+    <object>objects\player_obj</object>
+    <object>objects\obj_solidbrick</object>
+    <object>objects\enemy_singleshot_obj</object>
+    <object>objects\solid_obj</object>
     <object>objects\enemy_shotgun_obj</object>
     <object>objects\enemy_rocket_obj</object>
-    <object>objects\enemy_singleshot_obj</object>
     <object>objects\enemy_spawner_obj</object>
     <object>objects\projectile_obj</object>
     <object>objects\weapon_obj</object>
+=======
+    <object>objects\solid_obj</object>
+    <object>objects\enemy_parent_obj</object>
+    <object>objects\enemy_melee_obj</object>
+    <object>objects\enemy_singleshot_obj</object>
+    <object>objects\enemy_shotgun_obj</object>
+    <object>objects\enemy_rocket_obj</object>
     <object>objects\player_obj</object>
     <object>objects\wall_obj</object>
     <object>objects\camera_obj</object>
+>>>>>>> clkerl
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
   </rooms>
-  <constants number="5">
-    <constant name="WEP_SHOTGUN">0</constant>
-    <constant name="WEP_SINGLESHOT">1</constant>
-    <constant name="WEP_ROCKET">2</constant>
-    <constant name="WEP_MELEE">3</constant>
-    <constant name="NULL">-1</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

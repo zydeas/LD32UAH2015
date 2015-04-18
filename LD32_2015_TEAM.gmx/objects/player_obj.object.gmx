@@ -29,7 +29,7 @@
 dy = 0;
 
 spd = 0;
-walkingSpd = 2;
+walkingSpd = 4;
 </string>
           </argument>
         </arguments>
@@ -67,6 +67,8 @@ else
 }
 
 physics_move_collide(hor*spd,ver*spd,solid_obj);
+
+
 </string>
           </argument>
         </arguments>
