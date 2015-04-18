@@ -16,6 +16,7 @@
     <sprite>sprites\weapon_spr</sprite>
     <sprite>sprites\wep_singleshot_spr</sprite>
     <sprite>sprites\ene_single_mask_spr</sprite>
+    <sprite>sprites\ene_nuke_mask_spr</sprite>
     <sprite>sprites\ene_rocket_mask_spr</sprite>
     <sprite>sprites\health_bar_spr</sprite>
     <sprite>sprites\explosion_spr</sprite>
@@ -39,6 +40,7 @@
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
       <object>objects\enemy_singleshot_obj</object>
+      <object>objects\enemy_nuke_obj</object>
       <object>objects\enemy_melee_obj</object>
       <object>objects\enemy_rocket_obj</object>
       <object>objects\enemy_shotgun_obj</object>
@@ -55,7 +57,8 @@
   <rooms name="rooms">
     <room>rooms\level_room</room>
   </rooms>
-  <constants number="12">
+  <constants number="13">
+    <constant name="WEP_NUKE">4</constant>
     <constant name="WEPTAG_RANGE">4</constant>
     <constant name="WEPTYPE_PROJECTILE">0</constant>
     <constant name="WEPTYPE_MELEE">1</constant>
