@@ -34,6 +34,11 @@ path = path_add();
 mp_grid_add_instances(path, wall_obj, 1);
 
 weapon = WEP_SINGLESHOT;
+
+if (current_health == 0)
+{
+    global.death_count++;
+}
 </string>
           </argument>
         </arguments>
@@ -60,6 +65,8 @@ weapon = WEP_SINGLESHOT;
 {
     instance_destroy();
 }*/
+
+global.death_count++;
 </string>
           </argument>
         </arguments>

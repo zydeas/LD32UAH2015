@@ -109,6 +109,11 @@ if wepData != NULL
     }
 }
 
+if(current_health == 0)
+{
+    global.death_count++;
+}
+
 //Old Healthbar
 /*if(current_health &gt;=0)
 {
