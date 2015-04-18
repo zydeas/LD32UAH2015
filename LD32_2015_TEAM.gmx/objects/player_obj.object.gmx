@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>dx = 0;
 dy = 0;
+
+spd = 0;
+walkingSpd = 2;
 </string>
           </argument>
         </arguments>
@@ -49,7 +52,22 @@ dy = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>var hor,ver;
+
+hor = keyboard_check(ord("D"))-keyboard_check(ord("A"));
+ver = keyboard_check(ord("S"))-keyboard_check(ord("W"));
+
+if hor != 0 or ver != 0
+{
+    spd = walkingSpd;
+}
+else
+{
+    spd = lerp(spd,0,0.2);
+}
+
+physics_move_collide(hor*spd,ver*spd,solid_obj);
+</string>
           </argument>
         </arguments>
       </action>

@@ -16,10 +16,11 @@
   </scripts>
   <objects name="objects">
     <object>objects\player_obj</object>
-	<object>objects\obj_solidbrick</object>
+    <object>objects\obj_solidbrick</object>
+    <object>objects\solid_obj</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\level_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
