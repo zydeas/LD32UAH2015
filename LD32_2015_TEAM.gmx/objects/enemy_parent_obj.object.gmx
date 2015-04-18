@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_weapon = null;
-_speed = null;
-_health = null;
+            <string>max_health = 100;
+current_health = 100;
 
+healthbar_id = instance_create(x, y, health_bar_obj);
 </string>
           </argument>
         </arguments>
@@ -51,7 +51,42 @@ _health = null;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>
+if(current_health &gt;=0)
+{
+    healthbar_id.image_xscale = current_health / max_health;
+}
+else
+{
+    healthbar_id.image_xscale = 0;
+}
+
+healthbar_id.x = x - 4;
+healthbar_id.y = y - 20;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="projectile_obj">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>current_health -= 10;
+</string>
           </argument>
         </arguments>
       </action>

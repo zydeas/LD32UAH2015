@@ -69,10 +69,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>next_x = x + lengthdir_x(7, image_angle);
-next_y = y + lengthdir_y(7, image_angle);
-
-proj_id = instance_create(next_x, next_y, projectile_obj);
+            <string>proj_id = instance_create(x, y, projectile_obj);
 
 proj_id.direction = image_angle;
 
