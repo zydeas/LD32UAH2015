@@ -8,6 +8,16 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts"/>
+  <objects name="objects">
+    <objects name="Enemy_obj">
+      <object>objects\enemy_parent_obj</object>
+      <object>objects\enemy_melee_obj</object>
+      <object>objects\enemy_singleshot_obj</object>
+      <object>objects\enemy_shotgun_obj</object>
+      <object>objects\enemy_rocket_obj</object>
+    </objects>
+  </objects>
   <help>
     <rtf>help.rtf</rtf>
   </help>
