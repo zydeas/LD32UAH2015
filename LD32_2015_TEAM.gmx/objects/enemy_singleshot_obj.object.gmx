@@ -27,8 +27,39 @@
             <kind>1</kind>
             <string>event_inherited();
 
-weapon_id = instance_create(x, y, weapon_singleshot_obj);
+//weapon_id = instance_create(x, y, weapon_singleshot_obj);
 
+grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
+path = path_add();
+mp_grid_add_instances(path, wall_obj, 1);
+
+weapon = WEP_SINGLESHOT;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*with(weapon_id)
+{
+    instance_destroy();
+}*/
 </string>
           </argument>
         </arguments>
@@ -51,18 +82,13 @@ weapon_id = instance_create(x, y, weapon_singleshot_obj);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
-path = path_add();
-mp_grid_add_instances(path, wall_obj, 1);
+            <string>event_inherited();
+
 mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
 path_start(path, 3, "", 1);
 
-
-player_id = instance_find(player_obj, 0);
-
-player_x = player_id.x;
-player_y = player_id.y;
+/*player_x = player_obj.x;
+player_y = player_obj.y;
 
 weapon_id.image_angle = point_direction(x, y, player_x, player_y)
 
@@ -70,7 +96,6 @@ if(weapon_id.image_angle &gt; 90 &amp;&amp; weapon_id.image_angle &lt;=270)
 {
     weapon_id.image_yscale = -1;
 }
-
 else
 {
     weapon_id.image_yscale = 1;
@@ -80,60 +105,12 @@ next_x = x + 12 + lengthdir_x(25, weapon_id.image_angle);
 next_y = y + 12 + lengthdir_y(25, weapon_id.image_angle);
 
 weapon_id.x = next_x;
-weapon_id.y = next_y;
+weapon_id.y = next_y;*/
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(current_health &lt;=0)
+if(current_health &lt;= 0)
 {
     instance_destroy();
-    with(weapon_id)
-    {
-        instance_destroy();
-    }
-    with(healthbar_id)
-    {
-        instance_destroy();
-    }
+    
 }
 </string>
           </argument>
