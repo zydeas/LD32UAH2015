@@ -65,8 +65,6 @@ if (current_health == 0)
 {
     instance_destroy();
 }*/
-
-global.death_count++;
 </string>
           </argument>
         </arguments>
