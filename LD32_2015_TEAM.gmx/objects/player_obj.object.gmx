@@ -69,17 +69,6 @@ else
 physics_move_collide(hor*spd,ver*spd,solid_obj);
 
 
-//Draw a collision line
-var cx,cy;
-cx = collision_line(x,y,,,solid_obj,,);
-cy = ;
-
-
-draw_line(x,y,,);
-
-
-
-
 </string>
           </argument>
         </arguments>
