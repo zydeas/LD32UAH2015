@@ -10,6 +10,7 @@ if object_exists(colisionObject)
     sx = 1*sign(dx);
     sy = 1*sign(dy);
     var moveObject = NULL;
+    var moved = true;
     
     if (dx!=0) 
     {
@@ -27,6 +28,7 @@ if object_exists(colisionObject)
                     do 
                     {
                         moveObject = instance_place(x+sx,y,moveableObject);
+                        
                         with moveObject
                         {
                             if !place_meeting(x+other.sx,y,solid_obj)
@@ -34,11 +36,10 @@ if object_exists(colisionObject)
                                 x += other.sx;
                             }
                         }
-                        
-                        ii++
+                        ii++;
                     } until (!place_meeting(x+sx,y,moveableObject) or ii > 24)
                     
-                    x += sx/2;
+                    x += sx/8;
                 }
             }
             else break;
@@ -57,15 +58,22 @@ if object_exists(colisionObject)
                 }
                 else
                 {
-                     ii = 0;
+                    var jj = 0;
                     do 
                     {
                         moveObject = instance_place(x,y+sy,moveableObject);
-                        moveObject.y += sy;
-                        ii++
-                    } until (!place_meeting(x,y+sy,moveableObject) or ii > 24)
+                        
+                        with moveObject
+                        {
+                            if !place_meeting(x,y+other.sy,solid_obj)
+                            {
+                                y += other.sy;
+                            }
+                        }
+                        jj++;
+                    } until (!place_meeting(x,y+sy,moveableObject) or jj > 24)
                     
-                    y += sy/2;
+                    y += sy/8;
                 }
             }
             else break;
