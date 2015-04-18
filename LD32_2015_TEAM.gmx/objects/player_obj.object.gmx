@@ -29,7 +29,23 @@
 dy = 0;
 
 spd = 0;
+<<<<<<< HEAD
+walkingSpd = 2;
+
+globalvar death_count;
+
+global.death_count = 0;
+
+globalvar death_count;
+
+global.death_count = 0;
+
+globalvar death_count;
+
+global.death_count = 0;
+=======
 walkingSpd = 4;
+>>>>>>> 88da3ecd3726ba28993416ac04e7c3428cb9cd79
 
 globalvar death_count;
 
@@ -113,6 +129,81 @@ else
 physics_move_collide(hor*spd,ver*spd,solid_obj);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//death counter in upper-left of screen
+
+draw_text(32, 32, "Death Count: " + string(global.death_count));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//death counter in upper-left of screen
+
+draw_text(32, 32, "Death Count: " + string(global.death_count));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//death counter in upper-left of screen
+
+draw_text(32, 32, "Death Count: " + string(global.death_count));
 </string>
           </argument>
         </arguments>
