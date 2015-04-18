@@ -21,7 +21,6 @@
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_solidbrick</object>
     <object>objects\solid_obj</object>
     <object>objects\enemy_parent_obj</object>
     <object>objects\enemy_melee_obj</object>
