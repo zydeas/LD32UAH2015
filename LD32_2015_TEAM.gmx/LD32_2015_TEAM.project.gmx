@@ -22,6 +22,10 @@
     <sprite>sprites\explosion_spr</sprite>
     <sprite>sprites\sword_spr</sprite>
     <sprite>sprites\knife_hitbox_spr</sprite>
+    <sprite>sprites\heal_hitbox_spr</sprite>
+    <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\Back_player_spr</sprite>
+    <sprite>sprites\front_player_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -53,6 +57,7 @@
     <object>objects\rocket_obj</object>
     <object>objects\explosion_obj</object>
     <object>objects\knife_hitbox_obj</object>
+    <object>objects\heal_hitbox_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
