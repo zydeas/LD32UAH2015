@@ -29,6 +29,7 @@
     <object>objects\player_obj</object>
     <object>objects\camera_obj</object>
     <object>objects\weapon_singleshot_obj</object>
+    <object>objects\weapon_machinegun_obj</object>
     <object>objects\weapon_shotgun_obj</object>
     <object>objects\health_bar_obj</object>
     <objects name="Enemies">
