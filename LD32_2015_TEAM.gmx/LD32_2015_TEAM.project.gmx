@@ -12,6 +12,7 @@
     <sprite>sprites\spawner_mask_spr</sprite>
     <sprite>sprites\projectile_spr</sprite>
     <sprite>sprites\weapon_spr</sprite>
+    <sprite>sprites\ene_single_mask_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,6 +34,7 @@
     <object>objects\player_obj</object>
     <object>objects\wall_obj</object>
     <object>objects\camera_obj</object>
+    <object>objects\weapon_singleshot_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
