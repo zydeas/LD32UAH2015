@@ -154,7 +154,7 @@ healthbar_id.y = y - 20;*/
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="projectile_parent_obj">
+    <event eventtype="4" ename="projectile_obj">
       <action>
         <libid>1</libid>
         <id>603</id>

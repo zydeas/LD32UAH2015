@@ -24,7 +24,7 @@
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\projectile_parent_obj</object>
+    <object>objects\projectile_obj</object>
     <object>objects\weapon_obj</object>
     <object>objects\player_obj</object>
     <object>objects\camera_obj</object>
