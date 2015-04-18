@@ -51,8 +51,7 @@ _health = null;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_weapon.
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
