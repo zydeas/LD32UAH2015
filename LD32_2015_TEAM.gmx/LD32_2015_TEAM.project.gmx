@@ -15,8 +15,12 @@
     <sprite>sprites\building_spr</sprite>
     <sprite>sprites\building2_spr</sprite>
     <sprite>sprites\building3_spr</sprite>
+    <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\startbttn_spr</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\placeholder_bg</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
@@ -39,10 +43,12 @@
     <object>objects\building_obj</object>
     <object>objects\building2_obj</object>
     <object>objects\building3_obj</object>
+    <object>objects\startbttn_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
     <room>rooms\room3</room>
+    <room>rooms\splashscreen_room</room>
   </rooms>
   <constants number="5">
     <constant name="WEP_SHOTGUN">0</constant>
