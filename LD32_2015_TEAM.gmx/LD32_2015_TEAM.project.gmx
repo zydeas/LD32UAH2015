@@ -12,6 +12,9 @@
     <sprite>sprites\spawner_mask_spr</sprite>
     <sprite>sprites\projectile_spr</sprite>
     <sprite>sprites\weapon_spr</sprite>
+    <sprite>sprites\building_spr</sprite>
+    <sprite>sprites\building2_spr</sprite>
+    <sprite>sprites\building3_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -33,11 +36,12 @@
     <object>objects\player_obj</object>
     <object>objects\wall_obj</object>
     <object>objects\camera_obj</object>
+    <object>objects\building_obj</object>
+    <object>objects\building2_obj</object>
+    <object>objects\building3_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
-    <room>rooms\room1</room>
-    <room>rooms\room2</room>
     <room>rooms\room3</room>
   </rooms>
   <constants number="5">
