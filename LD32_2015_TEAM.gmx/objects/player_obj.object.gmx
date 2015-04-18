@@ -30,6 +30,8 @@ dy = 0;
 
 spd = 0;
 walkingSpd = 4;
+
+physics_move_init();
 </string>
           </argument>
         </arguments>
@@ -66,7 +68,7 @@ else
     spd = lerp(spd,0,0.2);
 }
 
-physics_move_collide(hor*spd,ver*spd,solid_obj);
+physics_move_collide(hor*spd,ver*spd,solid_obj,enemy_parent_obj);
 
 
 </string>
