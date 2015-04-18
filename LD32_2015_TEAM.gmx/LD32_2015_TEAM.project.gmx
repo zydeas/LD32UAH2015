@@ -5,9 +5,23 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_brick</sprite>
+    <sprite>sprites\player_mask_spr</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\physics_move_collide.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\player_obj</object>
+    <object>objects\obj_solidbrick</object>
+    <object>objects\solid_obj</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\level_room</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
