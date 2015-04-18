@@ -15,9 +15,19 @@
     <script>scripts\physics_move_collide.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\player_obj</object>
+      <object>objects\enemy_parent_obj</object>
+      <object>objects\enemy_parent_obj</object>
+      <object>objects\enemy_melee_obj</object>
+      <object>objects\enemy_singleshot_obj</object>
+      <object>objects\player_obj</object>
+      <object>objects\enemy_shotgun_obj</object>
+      <object>objects\enemy_melee_obj</object>
+      <object>objects\enemy_rocket_obj</object>
     <object>objects\obj_solidbrick</object>
+      <object>objects\enemy_singleshot_obj</object>
     <object>objects\solid_obj</object>
+      <object>objects\enemy_shotgun_obj</object>
+      <object>objects\enemy_rocket_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
