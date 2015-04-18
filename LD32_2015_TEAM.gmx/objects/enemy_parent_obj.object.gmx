@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>solid_obj</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,42 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_weapon = null;
-_speed = null;
-_health = null;
+            <string>max_health = 100;
+current_health = 100;
 
+_weapon = NULL;
+
+weapon = NULL;
+weapon_aim = 0;
+weapon_x = x;
+weapon_y = y;
+weapon_scale = 1;
+fireTimer = 0;
+
+healthbar_id = instance_create(x, y, health_bar_obj);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.death_count++;
 </string>
           </argument>
         </arguments>
@@ -51,7 +83,137 @@ _health = null;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if instance_exists(player_obj)
+{
+    weapon_aim = point_direction(x, y, player_obj.x, player_obj.y);
+}
+
+weapon_x = x+12+lengthdir_x(25, weapon_aim);
+weapon_y = y+12+lengthdir_y(25, weapon_aim);
+
+if(weapon_aim &gt; 90 &amp;&amp; weapon_aim &lt;=270)
+{
+    weapon_scale = -1;
+}
+else
+{
+    weapon_scale = 1;
+}
+
+var wepData = weapon_data(weapon);
+
+if wepData != NULL
+{
+    switch wepData[? WEPTAG_TYPE ]
+    {
+        case WEPTYPE_PROJECTILE:
+            if fireTimer &lt;= 0
+            {
+                if object_exists(wepData[? WEPTAG_PROJECTILE ])
+                {
+                    var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
+                    
+                    with o
+                    {
+                        direction = other.weapon_aim;
+                    }
+                }
+                
+                fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
+            }
+            else
+            {
+                fireTimer -= 1;
+            }
+        break;
+        
+        case WEPTYPE_MELEE:
+        break;
+    }
+}
+
+if(current_health == 0)
+{
+    global.death_count++;
+}
+
+//Old Healthbar
+/*if(current_health &gt;=0)
+{
+    healthbar_id.image_xscale = current_health / max_health;
+}
+else
+{
+    healthbar_id.image_xscale = 0;
+}
+
+healthbar_id.x = x - 4;
+healthbar_id.y = y - 20;*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="projectile_parent_obj">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>current_health -= 10;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+
+draw_set_color(c_maroon);
+draw_rectangle(x-4,y-9,x+28,y-4,false);
+draw_set_color(c_red);
+draw_rectangle(x-4,y-9,x+28,y-4,true);
+if weapon != NULL
+{
+    var wepData = weapon_data(weapon);
+    var wepSpr = wepData[? WEPTAG_SPRITE];
+    if sprite_exists(wepSpr)
+    {
+        draw_sprite_ext(wepSpr,0,weapon_x,weapon_y,1,weapon_scale,weapon_aim,c_white,1);
+    }
+}
+
+
+//draw_sprite_ext(health_bar_spr,0,x-4,y-20,current_health / max_health,1,0,c_white,1);
+</string>
           </argument>
         </arguments>
       </action>
