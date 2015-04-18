@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 60;
-image_index = 0;
 </string>
           </argument>
         </arguments>
@@ -56,29 +55,28 @@ image_index = 0;
       </action>
       <action>
         <libid>1</libid>
-        <id>201</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_create_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>10</kind>
-            <object>projectile_obj</object>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <kind>1</kind>
+            <string>next_x = x + lengthdir_x(7, image_angle);
+next_y = y + lengthdir_y(7, image_angle);
+
+proj_id = instance_create(next_x, next_y, projectile_obj);
+
+proj_id.direction = image_angle;
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -100,8 +98,7 @@ image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 0;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

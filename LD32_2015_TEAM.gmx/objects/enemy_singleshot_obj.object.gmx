@@ -49,18 +49,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weapon_id.direction = weapon_id.direction + 1;
+            <string>grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
+path = path_add();
+mp_grid_add_instances(path, wall_obj, 1);
+mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
+path_start(path, 3, "", 1);
 
-weapon_id.image_angle = image_angle;
 
-///weapon_id.x = x;
-///weapon_id.y = y;
+player_id = instance_find(player_obj, 0);
 
-///next_x = lengthdir_x(12, image_angle);
-///next_y = lengthdir_y(12, image_angle);
+player_x = player_id.x;
+player_y = player_id.y;
 
-///weapon_id.x = next_x;
-///weapon_id.y = next_y;
+weapon_id.image_angle = point_direction(x, y, player_x, player_y)
+
+if(weapon_id.image_angle &gt; 90 &amp;&amp; weapon_id.image_angle &lt;=270)
+{
+    weapon_id.image_yscale = -1;
+}
+else
+{
+    weapon_id.image_yscale = 1;
+}
+
+next_x = x + 12 + lengthdir_x(25, weapon_id.image_angle);
+next_y = y + 12 + lengthdir_y(25, weapon_id.image_angle);
+
+weapon_id.x = next_x;
+weapon_id.y = next_y;
 
 </string>
           </argument>
