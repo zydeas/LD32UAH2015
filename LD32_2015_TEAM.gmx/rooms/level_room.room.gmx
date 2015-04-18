@@ -125,6 +125,8 @@
     <instance objName="enemy_spawner_obj" x="32" y="32" name="inst_6A94E9B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="32" y="320" name="inst_7B213396" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="manager_obj" x="32" y="0" name="inst_67E4C871" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="enemy_spawner_shotgun_obj" x="512" y="256" name="inst_8084B231" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weapon_shotgun_obj" x="128" y="256" name="inst_98ED6B59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
