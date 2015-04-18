@@ -20,19 +20,20 @@ ds_map_add_map(global.weaponMap, WEP_SINGLESHOT ,singleShot);
 
 ds_map_add(singleShot, WEPTAG_SPRITE,      weapon_spr);
 ds_map_add(singleShot, WEPTAG_TYPE,        WEPTYPE_PROJECTILE);
-ds_map_add(singleShot, WEPTAG_FIRE_RATE,   1);
+ds_map_add(singleShot, WEPTAG_FIRE_RATE,   5);
 ds_map_add(singleShot, WEPTAG_PROJECTILE,  projectile_obj);
 
 ds_map_add_map(global.weaponMap, WEP_MELEE ,melee);
 
-ds_map_add(melee, WEPTAG_SPRITE,      NULL);
+ds_map_add(melee, WEPTAG_SPRITE,      sword_spr);
 ds_map_add(melee, WEPTAG_TYPE,        WEPTYPE_MELEE);
 ds_map_add(melee, WEPTAG_FIRE_RATE,   1);
-ds_map_add(melee, WEPTAG_PROJECTILE,  projectile_obj);
+ds_map_add(melee, WEPTAG_RANGE,   1);
+ds_map_add(melee, WEPTAG_PROJECTILE,  knife_hitbox_obj);
 
 ds_map_add_map(global.weaponMap, WEP_ROCKET ,rocket);
 
 ds_map_add(rocket, WEPTAG_SPRITE,      NULL);
 ds_map_add(rocket, WEPTAG_TYPE,        WEPTYPE_PROJECTILE);
-ds_map_add(rocket, WEPTAG_FIRE_RATE,   1);
-ds_map_add(rocket, WEPTAG_PROJECTILE,  projectile_obj);
+ds_map_add(rocket, WEPTAG_FIRE_RATE,   100);
+ds_map_add(rocket, WEPTAG_PROJECTILE,  rocket_obj);

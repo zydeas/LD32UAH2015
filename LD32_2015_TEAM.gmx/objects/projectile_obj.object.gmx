@@ -28,6 +28,7 @@
             <string>damage = 20;
 direction = 0;
 speed = 10;
+creator = NULL;
 </string>
           </argument>
         </arguments>
