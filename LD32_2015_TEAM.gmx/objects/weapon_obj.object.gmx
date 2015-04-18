@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>proj_id = instance_create(x, y, projectile_obj);
+            <string>proj_id = instance_create(x, y, projectile_parent_obj);
 
 proj_id.direction = image_angle;
 
