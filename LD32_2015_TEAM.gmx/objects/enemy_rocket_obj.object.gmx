@@ -33,6 +33,7 @@ grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
 path = path_add();
 mp_grid_add_instances(path, wall_obj, 1);
 
+armor = 
 
 weapon = WEP_ROCKET;
 
