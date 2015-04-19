@@ -51,7 +51,8 @@ creator = NULL;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if (point_distance(xstart, ystart, x, y) &gt;= 256) instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
