@@ -37,6 +37,8 @@
     <script>scripts\enemy_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
+    <script>scripts\gamepad_input.gml</script>
+    <script>scripts\move_axis.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\manager_obj</object>

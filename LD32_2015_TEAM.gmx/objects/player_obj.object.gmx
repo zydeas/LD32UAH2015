@@ -35,6 +35,10 @@ physics_move_init();
 globalvar death_count;
 
 global.death_count = 0;
+
+xaxis = 0;
+yaxis = 0;
+magnitude = 0;
 </string>
           </argument>
         </arguments>
@@ -123,6 +127,10 @@ if bbox_bottom &gt; room_height
 {
     do {y-=1} until bbox_bottom=room_height;
 }
+
+gamepad_input(0);
+
+move_axis(xaxis, yaxis, .25 ,4);
 </string>
           </argument>
         </arguments>
