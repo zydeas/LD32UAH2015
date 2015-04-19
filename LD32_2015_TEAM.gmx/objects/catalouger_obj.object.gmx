@@ -27,8 +27,6 @@
             <kind>1</kind>
             <string>global.building_catalouge = ds_map_create();
 
-
-
 //Room Loading
 loaded = false;
 
@@ -73,7 +71,7 @@ ds_list_add(load_list,test_building_room);
     {
         case 0:
         {
-            var ri = global.building_list[|roomIndex];
+            var ri = load_list[|roomIndex];
             if room_exists(ri)
             {
                 room_goto(ri);
@@ -97,15 +95,28 @@ ds_list_add(load_list,test_building_room);
         case 2:
         {
             //Catalouge Room
-            var grid = room_catalouge_instances();
+            var instances = room_catalouge_instances();
+            var tiles = room_catalouge_tiles();
+            
+            var rm = ds_map_create();
+            rm[? CAT_INSTANCES] = instances;
+            rm[? CAT_TILES] = tiles;
+            rm[? CAT_ROOM_WIDTH] = room_width;
+            rm[? CAT_ROOM_HEIGHT] = room_height;
+            
+            ds_map_add_map(global.building_catalouge,room,rm);
             
             loadPhase = 3;
+            room_goto(test_build_room);
         }
         break;
         
         case 3:
         {
-            
+            if mouse_check_button_pressed(mb_left)
+            {
+                catalouge_build_instances(test_building_room,mouse_x,mouse_y);
+            }
         }
         break;
     }
