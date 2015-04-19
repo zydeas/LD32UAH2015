@@ -74,6 +74,9 @@ physics_move_init();
 
 dx = 0;
 dy = 0;
+
+killer = NULL;
+killer_weapon = NULL;
 </string>
           </argument>
         </arguments>
@@ -124,6 +127,13 @@ dy = 0;
 
 player_obj.lose_meter += 1;
 player_obj.enemies_alive--;
+
+for (i = 1; i &lt; array_length_1d(global.deaths); i++)
+{
+    global.deaths[i - 1] = global.deaths[0];
+}
+
+global.deaths[0] = "X killed Y with Z";
 </string>
           </argument>
         </arguments>
@@ -293,7 +303,10 @@ healthbar_id.y = y - 20;*/
             <kind>1</kind>
             <string>if (other.creator != id)
 {
-current_health = current_health + armor/10 -10;
+    current_health = current_health + armor/10 -10;
+    
+    killer = other.creator;
+    killer_weapon = other.creator.weapon;
 if (current_health &lt;0)
 {  
     id.killcount++; 

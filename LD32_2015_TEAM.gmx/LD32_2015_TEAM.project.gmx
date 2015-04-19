@@ -78,6 +78,7 @@
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>
     <object>objects\room_generator</object>
+    <object>objects\ticker</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\catalouge_start_room</room>
