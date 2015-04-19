@@ -32,6 +32,9 @@ spd = 0;
 walkingSpd = 4;
 
 physics_move_init();
+globalvar death_count;
+
+global.death_count = 0;
 </string>
           </argument>
         </arguments>
@@ -104,7 +107,47 @@ if mouse
     }
 }
 
+if bbox_left &lt; 0 
+{
+    do {x+=1} until bbox_left=0;
+}
+if bbox_right &gt; room_width
+{
+    do {x-=1} until bbox_right=room_width;
+}
+if bbox_top &lt; 0 
+{
+    do {y+=1} until bbox_top=0;
+}
+if bbox_bottom &gt; room_height
+{
+    do {y-=1} until bbox_bottom=room_height;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//death counter in upper-left of screen
 
+draw_text(32, 32, "Death Count: " + string(global.death_count));
 </string>
           </argument>
         </arguments>

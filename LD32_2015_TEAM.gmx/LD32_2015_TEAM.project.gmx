@@ -41,9 +41,12 @@
     <object>objects\player_obj</object>
     <object>objects\heal_hitbox_obj</object>
     <object>objects\camera_obj</object>
+    <object>objects\weapon_machinegun_obj</object>
+    <object>objects\weapon_shotgun_obj</object>
     <objects name="Enemies">
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
+      <object>objects\enemy_spawner_shotgun_obj</object>
       <object>objects\enemy_singleshot_obj</object>
       <object>objects\enemy_nuke_obj</object>
       <object>objects\enemy_melee_obj</object>

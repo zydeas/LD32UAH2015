@@ -28,6 +28,11 @@
             <string>event_inherited();
 
 weapon = WEP_SINGLESHOT;
+
+if (current_health == 0)
+{
+    global.death_count++;
+}
 </string>
           </argument>
         </arguments>

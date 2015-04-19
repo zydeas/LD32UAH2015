@@ -54,7 +54,11 @@ dy = 0;
         </arguments>
       </action>
     </event>
+<<<<<<< HEAD
     <event eventtype="2" enumb="0">
+=======
+    <event eventtype="1" enumb="0">
+>>>>>>> LDREPO/Charlaxy
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,7 +75,12 @@ dy = 0;
         <arguments>
           <argument>
             <kind>1</kind>
+<<<<<<< HEAD
             <string></string>
+=======
+            <string>global.death_count++;
+</string>
+>>>>>>> LDREPO/Charlaxy
           </argument>
         </arguments>
       </action>
@@ -194,8 +203,12 @@ else if instance_exists(player_obj)
     }
 }
 =======
+if(current_health == 0)
+{
+    global.death_count++;
+}
 
->>>>>>> LDREPO/RyanKline
+>>>>>>> LDREPO/Charlaxy
 //Old Healthbar
 /*if(current_health &gt;=0)
 {
@@ -318,22 +331,14 @@ current_health -= 10;
     draw_set_alpha(1);
 }
 
-<<<<<<< HEAD
 draw_self();
-
+var hpScale = current_health / max_health;
 //Draw a basic health bar
 var hpscale = current_health / max_health;
 draw_set_color(c_maroon);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26,false);
 draw_set_color(c_red);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
-=======
-var hpScale = current_health / max_health;
-draw_set_color(c_maroon);
-draw_rectangle(x-4,y-9,x+(28*hpScale),y-4,false);
-draw_set_color(c_red);
-draw_rectangle(x-4,y-9,x+28,y-4,true);
->>>>>>> LDREPO/RyanKline
 
 if weapon != NULL
 {
