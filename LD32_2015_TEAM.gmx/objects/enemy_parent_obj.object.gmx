@@ -29,6 +29,8 @@
 current_health = 100;
 healtick = 0;
 
+player_obj.enemies_alive++;
+
 _weapon = NULL;
 
 weapon = NULL;
@@ -71,6 +73,9 @@ dy = 0;
           <argument>
             <kind>1</kind>
             <string>global.death_count++;
+
+player_obj.lose_meter += 1;
+player_obj.enemies_alive--;
 </string>
           </argument>
         </arguments>
