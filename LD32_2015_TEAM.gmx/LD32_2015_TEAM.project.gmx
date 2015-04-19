@@ -60,6 +60,7 @@
       <object>objects\weapon_shotgun_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
+    <object>objects\ticker</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
