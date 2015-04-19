@@ -1,7 +1,7 @@
 ///catalouge_build_instances(source,x,y)
 var source = argument0;
-var xx = argument1;
-var yy = argument2;
+var xx = argument1 >> 5 << 5; // 32
+var yy = argument2 >> 5 << 5; // 32
 
 if ds_map_exists(global.building_catalouge,source)
 {
