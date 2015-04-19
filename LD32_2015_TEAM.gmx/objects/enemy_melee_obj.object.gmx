@@ -86,6 +86,10 @@ weapon = WEP_MELEE;
 
 //Update our collide list, so we can not be 
 //hit by the same bullet more than once
+
+
+//Update our collide list, so we can not be 
+//hit by the same bullet more than once
 </string>
           </argument>
         </arguments>
