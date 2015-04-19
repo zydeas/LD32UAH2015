@@ -28,6 +28,8 @@
             <string>event_inherited();
 
 weapon = WEP_MELEE;
+
+armor = 20;
 </string>
           </argument>
         </arguments>

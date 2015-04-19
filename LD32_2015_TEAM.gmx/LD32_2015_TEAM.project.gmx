@@ -41,7 +41,9 @@
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
     <script>scripts\game_weapon_tables.gml</script>
+    <script>scripts\game_enemy_tables.gml</script>
     <script>scripts\weapon_data.gml</script>
+    <script>scripts\enemy_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
   </scripts>
@@ -50,17 +52,9 @@
     <object>objects\player_obj</object>
     <object>objects\heal_hitbox_obj</object>
     <object>objects\camera_obj</object>
-    <object>objects\weapon_machinegun_obj</object>
-    <object>objects\weapon_shotgun_obj</object>
     <objects name="Enemies">
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
-      <object>objects\enemy_spawner_shotgun_obj</object>
-      <object>objects\enemy_singleshot_obj</object>
-      <object>objects\enemy_nuke_obj</object>
-      <object>objects\enemy_melee_obj</object>
-      <object>objects\enemy_rocket_obj</object>
-      <object>objects\enemy_shotgun_obj</object>
     </objects>
     <objects name="World">
       <object>objects\wall_obj</object>
@@ -71,6 +65,8 @@
       <object>objects\explosion_obj</object>
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
+      <object>objects\weapon_machinegun_obj</object>
+      <object>objects\weapon_shotgun_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>
@@ -83,20 +79,30 @@
     <room>rooms\room_lose</room>
     <room>rooms\random_test_room</room>
   </rooms>
-  <constants number="13">
+  <constants number="23">
+    <constant name="ENM_ARMOR">2</constant>
+    <constant name="ENM_HEALTH">3</constant>
+    <constant name="ENM_SPEED">0</constant>
+    <constant name="ENM_SPRITE">1</constant>
+    <constant name="ENMTYPE_CROW">1</constant>
+    <constant name="ENMTYPE_OWL">0</constant>
+    <constant name="ENMTYPE_PIDGEON">2</constant>
+    <constant name="ENMTYPE_ROBIN">3</constant>
+    <constant name="ENMTYPE_VULTURE">4</constant>
+    <constant name="NULL">-1</constant>
+    <constant name="WEP_MACHINEGUN">5</constant>
+    <constant name="WEP_MELEE">3</constant>
     <constant name="WEP_NUKE">4</constant>
-    <constant name="WEPTAG_RANGE">4</constant>
-    <constant name="WEPTYPE_PROJECTILE">0</constant>
-    <constant name="WEPTYPE_MELEE">1</constant>
-    <constant name="WEPTAG_SPRITE">0</constant>
-    <constant name="WEPTAG_PROJECTILE">1</constant>
-    <constant name="WEPTAG_TYPE">2</constant>
-    <constant name="WEPTAG_FIRE_RATE">3</constant>
+    <constant name="WEP_ROCKET">2</constant>
     <constant name="WEP_SHOTGUN">0</constant>
     <constant name="WEP_SINGLESHOT">1</constant>
-    <constant name="WEP_ROCKET">2</constant>
-    <constant name="WEP_MELEE">3</constant>
-    <constant name="NULL">-1</constant>
+    <constant name="WEPTAG_FIRE_RATE">3</constant>
+    <constant name="WEPTAG_PROJECTILE">1</constant>
+    <constant name="WEPTAG_RANGE">4</constant>
+    <constant name="WEPTAG_SPRITE">0</constant>
+    <constant name="WEPTAG_TYPE">2</constant>
+    <constant name="WEPTYPE_MELEE">1</constant>
+    <constant name="WEPTYPE_PROJECTILE">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
