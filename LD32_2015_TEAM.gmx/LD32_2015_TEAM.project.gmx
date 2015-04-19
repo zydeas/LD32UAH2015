@@ -48,6 +48,9 @@
     <script>scripts\room_catalouge_instances.gml</script>
     <script>scripts\cool_guy_names.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\dank_font</font>
+  </fonts>
   <objects name="objects">
     <object>objects\manager_obj</object>
     <object>objects\player_obj</object>

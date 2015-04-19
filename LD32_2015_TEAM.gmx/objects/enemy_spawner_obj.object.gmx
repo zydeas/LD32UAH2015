@@ -28,39 +28,14 @@
             <string>//alarm[0] = 300;
 
 //measured in steps
-melee_frequency = 1000;
-single_frequency = 1200;
-nuke_frequency = 1400;
-rocket_frequency = 1600;
-machine_frequency = 1900;
-shotgun_frequency = 2200;
+melee_frequency = 0;
+single_frequency = 0;
+nuke_frequency = 0;
+rocket_frequency = 0;
+machine_frequency = 500;
+shotgun_frequency = 0;
 
 spawner_tick = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//alarm[0] = random_range(240, 360);
-
-//instance_create(x, y, enemy_parent_obj);
 </string>
           </argument>
         </arguments>
@@ -88,7 +63,7 @@ spawner_tick += 1;
 
 
 //spawns melee unit after x ticks where x is melee frequency
-if(spawner_tick % melee_frequency == 0 &amp;&amp; melee_frequency != 0)
+if( melee_frequency &gt; 0 &amp;&amp; spawner_tick % melee_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_PIDGEON;
@@ -96,7 +71,7 @@ if(spawner_tick % melee_frequency == 0 &amp;&amp; melee_frequency != 0)
 }
 
 //spawn for singles
-if(spawner_tick % single_frequency == 0 &amp;&amp; single_frequency != 0)
+if( single_frequency &gt; 0 &amp;&amp; spawner_tick % single_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_CROW;
@@ -104,7 +79,7 @@ if(spawner_tick % single_frequency == 0 &amp;&amp; single_frequency != 0)
 }
 
 //spawn for nukes
-if(spawner_tick % nuke_frequency == 0 &amp;&amp; nuke_frequency != 0)
+if( nuke_frequency &gt; 0 &amp;&amp; spawner_tick % nuke_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_OWL;
@@ -112,21 +87,21 @@ if(spawner_tick % nuke_frequency == 0 &amp;&amp; nuke_frequency != 0)
 }
 
 //Spawn for rockets
-if(spawner_tick % rocket_frequency == 0 &amp;&amp; rocket_frequency != 0)
+if( rocket_frequency &gt; 0 &amp;&amp; spawner_tick % rocket_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_ROBIN;
     temp_enemy_id.weapon = WEP_ROCKET;
 }
 
-if(spawner_tick % machine_frequency == 0 &amp;&amp; machine_frequency != 0)
+if( machine_frequency &gt; 0 &amp;&amp; spawner_tick % machine_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_VULTURE;
     temp_enemy_id.weapon = WEP_MACHINEGUN;
 }
 
-if(spawner_tick % shotgun_frequency == 0 &amp;&amp; shotgun_frequency != 0)
+if( shotgun_frequency &gt; 0 &amp;&amp; spawner_tick % shotgun_frequency == 0 )
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_CROW;

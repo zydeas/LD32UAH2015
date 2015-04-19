@@ -30,3 +30,4 @@ global.sick_handles[4] = "Frodo Teabaggins";
 global.sick_handles[5] = "Dyslexic_stoner_240";
 global.sick_handles[6] = "xxX_qu1ckscoper pussyDestroyer_Xxy69";
 global.sick_handles[7] = "Aloha Snackbar";
+global.sick_handles[8] = "NULL";
