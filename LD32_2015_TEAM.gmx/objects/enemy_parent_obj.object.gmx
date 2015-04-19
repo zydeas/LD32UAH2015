@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = choose(ENMTYPE_OWL, ENMTYPE_CROW, ENMTYPE_ROBIN, ENMTYPE_PIDGEON, ENMTYPE_VULTURE);
+            <string>//chooses type
+type = choose(ENMTYPE_OWL, ENMTYPE_CROW, ENMTYPE_ROBIN, ENMTYPE_PIDGEON, ENMTYPE_VULTURE);
 
 enmTable = enemy_data(type);
 
@@ -33,11 +34,29 @@ max_health = enmTable[? ENM_HEALTH];
 current_health = max_health;
 healtick = 0;
 
+handle_length = random_range(0, array_length_1d(global.sick_handles));
+first_length = random_range(0, array_length_1d(global.first_names));
+last_length = random_range(0, array_length_1d(global.last_names));
+
+name_determine = random_range(0,4);
+
+if(name_determine &lt;= 3)
+{
+    enemy_name = global.first_names[first_length] + " " + global.last_names[last_length]; 
+}
+
+else
+{
+    enemy_name = global.sick_handles[handle_length];
+}
+
+player_obj.enemies_alive++;
+
 armor = enmTable[? ENM_ARMOR];
 
 _weapon = NULL;
 
-weapon = choose(WEP_NUKE,WEP_SHOTGUN, WEP_SINGLESHOT, WEP_ROCKET, WEP_MELEE, WEP_MACHINEGUN, WEP_SHOTGUN );
+weapon = choose(WEP_NUKE,WEP_SHOTGUN, WEP_SINGLESHOT, WEP_ROCKET, WEP_MELEE, WEP_MACHINEGUN );
 
 weapon_aim = 0;
 weapon_x = x;
@@ -55,6 +74,9 @@ physics_move_init();
 
 dx = 0;
 dy = 0;
+
+killer = NULL;
+killer_weapon = NULL;
 </string>
           </argument>
         </arguments>
@@ -102,6 +124,59 @@ dy = 0;
           <argument>
             <kind>1</kind>
             <string>global.death_count++;
+
+player_obj.lose_meter += 1;
+player_obj.enemies_alive--;
+
+for (i = 1; i &lt; array_length_1d(global.deaths); i++)
+{
+    global.deaths[i - 1] = global.deaths[i];
+}
+
+var i = array_length_1d(global.deaths);
+
+i--;
+
+if(killer == NULL)
+{
+    if(killer_weapon == WEP_ROCKET)
+    {
+        global.deaths[i] = id.enemy_name + " exploded.";
+    }
+    else
+    {
+        global.deaths[i] = id.enemy_name + " died.";
+    }
+}
+else if(killer_weapon == WEP_MACHINEGUN)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a machine gun.";
+}
+else if(killer_weapon == WEP_MELEE)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a knife -- humiliation!";
+}
+else if(killer_weapon == WEP_NUKE)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a bomb.";
+}
+else if(killer_weapon == WEP_ROCKET)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a rocket.";
+}
+else if(killer_weapon == WEP_SHOTGUN)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a shotgun.";
+}
+else if(killer_weapon == WEP_SINGLESHOT)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a pistol.";
+}
+else
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + ".";
+}
+
 </string>
           </argument>
         </arguments>
@@ -269,13 +344,33 @@ healthbar_id.y = y - 20;*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.creator != id)
+            <string>if (other.creator == id)
 {
-current_health = current_health + armor/10 -10;
-if (current_health &lt;0)
-{  
-    id.killcount++; 
-}}
+    exit;
+}
+
+current_health = current_health + armor / 10 - 10;
+
+if (current_health &gt; 0)
+{
+    exit;
+}
+
+id.killcount++; 
+
+if(other == NULL)
+{
+    exit;
+}
+
+killer = other.creator;
+
+if(other.creator == NULL)
+{
+    exit;
+}
+
+killer_weapon = other.creator.weapon;
 </string>
           </argument>
         </arguments>
@@ -299,6 +394,16 @@ if (current_health &lt;0)
           <argument>
             <kind>1</kind>
             <string>current_health -= 10 - other.image_xscale;
+
+if (current_health &gt; 0)
+{
+    exit;
+}
+
+killer = NULL;
+killer_weapon = WEP_ROCKET;
+
+id.killcount++;
 </string>
           </argument>
         </arguments>
@@ -368,6 +473,13 @@ draw_set_color(c_maroon);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26,false);
 draw_set_color(c_red);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
+
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_text(x, y-40, enemy_name);
+draw_set_halign(fa_left);
+
+
 if type != NULL
 {
     var enmData = enemy_data(type);
