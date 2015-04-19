@@ -130,10 +130,53 @@ player_obj.enemies_alive--;
 
 for (i = 1; i &lt; array_length_1d(global.deaths); i++)
 {
-    global.deaths[i - 1] = global.deaths[0];
+    global.deaths[i - 1] = global.deaths[i];
 }
 
-global.deaths[0] = "X killed Y with Z";
+var i = array_length_1d(global.deaths);
+
+i--;
+
+if(killer == NULL)
+{
+    if(killer_weapon == WEP_ROCKET)
+    {
+        global.deaths[i] = id.enemy_name + " exploded.";
+    }
+    else
+    {
+        global.deaths[i] = id.enemy_name + " died.";
+    }
+}
+else if(killer_weapon == WEP_MACHINEGUN)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a machine gun.";
+}
+else if(killer_weapon == WEP_MELEE)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a knife -- humiliation!";
+}
+else if(killer_weapon == WEP_NUKE)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a bomb.";
+}
+else if(killer_weapon == WEP_ROCKET)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a rocket.";
+}
+else if(killer_weapon == WEP_SHOTGUN)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a shotgun.";
+}
+else if(killer_weapon == WEP_SINGLESHOT)
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + " with a pistol.";
+}
+else
+{
+    global.deaths[i] = killer.enemy_name + "killed " + id.enemy_name + ".";
+}
+
 </string>
           </argument>
         </arguments>
@@ -301,16 +344,33 @@ healthbar_id.y = y - 20;*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.creator != id)
+            <string>if (other.creator == id)
 {
-    current_health = current_health + armor/10 -10;
-    
-    killer = other.creator;
-    killer_weapon = other.creator.weapon;
-if (current_health &lt;0)
-{  
-    id.killcount++; 
-}}
+    exit;
+}
+
+current_health = current_health + armor / 10 - 10;
+
+if (current_health &gt; 0)
+{
+    exit;
+}
+
+id.killcount++; 
+
+if(other == NULL)
+{
+    exit;
+}
+
+killer = other.creator;
+
+if(other.creator == NULL)
+{
+    exit;
+}
+
+killer_weapon = other.creator.weapon;
 </string>
           </argument>
         </arguments>
@@ -334,6 +394,16 @@ if (current_health &lt;0)
           <argument>
             <kind>1</kind>
             <string>current_health -= 10 - other.image_xscale;
+
+if (current_health &gt; 0)
+{
+    exit;
+}
+
+killer = NULL;
+killer_weapon = WEP_ROCKET;
+
+id.killcount++;
 </string>
           </argument>
         </arguments>
