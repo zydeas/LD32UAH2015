@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>enemy_parent_obj</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,10 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
-grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
-path = path_add();
-mp_grid_add_instances(path, wall_obj, 1);
 
 weapon = WEP_SHOTGUN;
 </string>

@@ -52,7 +52,6 @@
       <object>objects\enemy_melee_obj</object>
       <object>objects\enemy_rocket_obj</object>
       <object>objects\enemy_shotgun_obj</object>
-      <object>objects\health_bar_obj</object>
     </objects>
     <objects name="World">
       <object>objects\wall_obj</object>
