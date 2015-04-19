@@ -20,28 +20,41 @@
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
     <script>scripts\create_weapon_table.gml</script>
+    <script>scripts\game_weapon_tables.gml</script>
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\solid_obj</object>
-    <object>objects\enemy_parent_obj</object>
-    <object>objects\enemy_melee_obj</object>
-    <object>objects\enemy_shotgun_obj</object>
-    <object>objects\enemy_rocket_obj</object>
-    <object>objects\enemy_singleshot_obj</object>
-    <object>objects\enemy_spawner_obj</object>
-    <object>objects\projectile_obj</object>
+    <object>objects\projectile_parent_obj</object>
     <object>objects\weapon_obj</object>
     <object>objects\player_obj</object>
-    <object>objects\wall_obj</object>
     <object>objects\camera_obj</object>
     <object>objects\weapon_singleshot_obj</object>
     <object>objects\health_bar_obj</object>
+    <objects name="Enemies">
+      <object>objects\enemy_parent_obj</object>
+      <object>objects\enemy_spawner_obj</object>
+      <object>objects\enemy_melee_obj</object>
+      <object>objects\enemy_singleshot_obj</object>
+      <object>objects\enemy_rocket_obj</object>
+      <object>objects\enemy_shotgun_obj</object>
+    </objects>
+    <objects name="World">
+      <object>objects\wall_obj</object>
+      <object>objects\solid_obj</object>
+    </objects>
+    <object>objects\manager_obj</object>
+    <object>objects\projectile_shotgun_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
   </rooms>
-  <constants number="5">
+  <constants number="11">
+    <constant name="WEPTYPE_PROJECTILE">0</constant>
+    <constant name="WEPTYPE_MELEE">1</constant>
+    <constant name="WEPTAG_SPRITE">0</constant>
+    <constant name="WEPTAG_PROJECTILE">1</constant>
+    <constant name="WEPTAG_TYPE">2</constant>
+    <constant name="WEPTAG_FIRE_RATE">3</constant>
     <constant name="WEP_SHOTGUN">0</constant>
     <constant name="WEP_SINGLESHOT">1</constant>
     <constant name="WEP_ROCKET">2</constant>

@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_weapon = 0;
+            <string>_weapon = NULL;
+
+//Moved this to the create event, because we don't 
+//need to create a new mp grid every step. -CL
+grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
+path = path_add();
+mp_grid_add_instances(path, wall_obj, 1);
+
+collide_ids = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -48,11 +56,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
-path = path_add();
-mp_grid_add_instances(path, wall_obj, 1);
-mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
+            <string>mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
 path_start(path, 3, "", 1);
+
+
+//Update our collide list, so we can not be 
+//hit by the same bullet more than once
 </string>
           </argument>
         </arguments>
