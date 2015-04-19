@@ -34,6 +34,7 @@ nuke_frequency = 1400;
 rocket_frequency = 1600;
 machine_frequency = 1900;
 shotgun_frequency = 2200;
+airhorn_frequency = 2300;
 
 spawner_tick = 0;
 </string>
@@ -130,6 +131,13 @@ if(spawner_tick % shotgun_frequency == 0 &amp;&amp; shotgun_frequency != 0)
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_CROW;
+    temp_enemy_id.weapon = WEP_SHOTGUN;
+}
+
+if(spawner_tick % airhorn_frequency == 0 &amp;&amp; airhorn_frequency != 0)
+{
+    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+    temp_enemy_id.type = ENMTYPE_AIRHORN;
     temp_enemy_id.weapon = WEP_SHOTGUN;
 }
 </string>
