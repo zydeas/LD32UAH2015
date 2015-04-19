@@ -16,7 +16,6 @@
       <sprite>sprites\ene_nuke_mask_spr</sprite>
       <sprite>sprites\ene_single_mask_spr</sprite>
       <sprite>sprites\ene_melee_mask_spr</sprite>
-      <sprite>sprites\ene_airhorn_mask_spr</sprite>
       <sprite>sprites\enemy_mask_spr</sprite>
     </sprites>
     <sprites name="player_sprite">
@@ -34,7 +33,6 @@
       <sprite>sprites\projectile_spr</sprite>
       <sprite>sprites\rocket_spr</sprite>
     </sprites>
-    <sprite>sprites\sprite23</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\test_tiles_spr</background>
@@ -49,14 +47,11 @@
     <script>scripts\enemy_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
-<<<<<<< HEAD
     <script>scripts\gamepad_input.gml</script>
     <script>scripts\move_axis.gml</script>
-=======
     <script>scripts\cool_guy_names.gml</script>
     <script>scripts\room_catalouge_tiles.gml</script>
     <script>scripts\catalouge_build_instances.gml</script>
->>>>>>> 1d4b250b2be9afc375185efdb24a029d12fbda9a
   </scripts>
   <objects name="objects">
     <object>objects\manager_obj</object>
@@ -92,7 +87,7 @@
     <room>rooms\test_build_room</room>
     <room>rooms\random_test_room</room>
   </rooms>
-  <constants number="42">
+  <constants number="41">
     <constant name="ENM_SPEED">0</constant>
     <constant name="ENM_SPRITE">1</constant>
     <constant name="ENM_ARMOR">2</constant>
@@ -102,7 +97,6 @@
     <constant name="ENMTYPE_PIDGEON">2</constant>
     <constant name="ENMTYPE_ROBIN">3</constant>
     <constant name="ENMTYPE_VULTURE">4</constant>
-    <constant name="ENMTYPE_AIRHORN">5</constant>
     <constant name="WEP_SHOTGUN">0</constant>
     <constant name="WEP_SINGLESHOT">1</constant>
     <constant name="WEP_ROCKET">2</constant>
