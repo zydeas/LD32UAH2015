@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,30 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.building_catalouge = ds_map_create();
-
-//Room Loading
-loaded = false;
-
-//0 = transitioning between rooms
-//1 = Waiting for a room to load fully
-//2 = Catalouging process
-//3 = process done
-loadPhase = 0;
-timer = 0;
-roomIndex = 0;
-roomDone = false;
-
-global.building_list = ds_list_create();
-
-load_list = ds_list_create();
-ds_list_add(load_list,test_building_room);
+            <string>global.deaths[0] = "";
+global.deaths[1] = "";
+global.deaths[2] = "";
+global.deaths[3] = "";
+global.deaths[4] = "";
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -65,61 +52,13 @@ ds_list_add(load_list,test_building_room);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !loaded
+            <string>Y = 80;
+
+for (i = 0; i &lt; array_length_1d(global.deaths); i++)
 {
-    switch loadPhase
-    {
-        case 0:
-        {
-            var ri = load_list[|roomIndex];
-            if room_exists(ri)
-            {
-                room_goto(ri);
-                loadPhase = 1;
-                timer = 5;
-            }
-        }
-        break;
-        
-        case 1:
-        {
-            if timer &gt; 0 
-                timer--
-            else
-            {
-                loadPhase = 2;
-            }
-        }
-        break;
-        
-        case 2:
-        {
-            //Catalouge Room
-            var instances = room_catalouge_instances();
-            var tiles = room_catalouge_tiles();
-            
-            var rm = ds_map_create();
-            rm[? CAT_INSTANCES] = instances;
-            rm[? CAT_TILES] = tiles;
-            rm[? CAT_ROOM_WIDTH] = room_width;
-            rm[? CAT_ROOM_HEIGHT] = room_height;
-            
-            ds_map_add_map(global.building_catalouge,room,rm);
-            
-            loadPhase = 3;
-            room_goto(test_build_room);
-        }
-        break;
-        
-        case 3:
-        {
-            if mouse_check_button_pressed(mb_left)
-            {
-                catalouge_build_instances(test_building_room,mouse_x,mouse_y);
-            }
-        }
-        break;
-    }
+    draw_text(32, Y, global.deaths[i]);
+    
+    Y += 16;
 }
 </string>
           </argument>

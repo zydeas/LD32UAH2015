@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>dx = 0;
 dy = 0;
-
+maxRange = 200;
+range = 0;
 
 spd = 0;
 walkingSpd = 4;
@@ -73,8 +74,16 @@ ver = keyboard_check(ord("S"))-keyboard_check(ord("W"));
 mouse = mouse_check_button(mb_left);
 mousermb = mouse_check_button(mb_right);
 
-beam_cooldown -= 1;
+//beam cooldown update
+if(beam_cooldown - 1 &lt; 0)
+{
+    beam_cooldown = 0;
+}
+else   
+{
+    beam_cooldown -= 1;
 
+}
 //losing meter handling
 if( lose_meter - lose_decrement &lt; 0)
 {
@@ -87,7 +96,7 @@ else
 
 if(lose_meter &gt;= lose_total)
 {
-    room_goto(3);
+    room_goto(1);
 }
 
 //Not losing meter handling
@@ -122,7 +131,11 @@ else
 
 physics_move_collide(hor*spd,ver*spd,solid_obj,enemy_parent_obj);
 
-if mouse
+var dist = distance_to_point(mouse_x, mouse_y);
+
+range = maxRange - dist;
+
+if (mouse and range &gt; 0)
 {
     if !instance_exists(heal_hitbox_obj)
     {
@@ -137,6 +150,9 @@ if mouse
 
 //healybeam
 if mousermb &amp;&amp; beam_cooldown == 0
+{
+    //point_beam_shoot(x, y, mouse_x, mouse_y);
+}
 
 if bbox_left &lt; 0 
 {
@@ -180,7 +196,7 @@ if bbox_bottom &gt; room_height
             <kind>1</kind>
             <string>//death counter in upper-left of screen
 
-global.time_elapsed = get_timer()/1000000;
+global.time_elapsed += delta_time/1000000;
 
 time_seconds = global.time_elapsed % 60;
 time_minutes = abs((global.time_elapsed / 60) - 0.5); //0.5 subtracted for rounding

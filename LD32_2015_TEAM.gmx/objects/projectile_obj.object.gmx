@@ -51,7 +51,10 @@ creator = NULL;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>var max_distance = 256;
+
+if (point_distance(xstart, ystart, x, y) &gt;= max_distance) instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -73,7 +76,12 @@ creator = NULL;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>if(point_distance(xstart, ystart, x, y) != 0)
+{
+    damage = damage / point_distance(xstart, ystart, x, y);
+}
+
+instance_destroy();
 </string>
           </argument>
         </arguments>
