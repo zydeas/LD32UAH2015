@@ -3,7 +3,7 @@
   <spriteName>front_player_spr</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>player_mask_spr</maskName>
@@ -62,6 +62,26 @@ if hor != 0 or ver != 0
 {
     spd = walkingSpd;
 }
+
+if hor == 1
+{
+sprite_index = side_player_spr;
+image_xscale = 1; 
+}
+else if hor == -1
+{
+sprite_index = side_player_spr;
+image_xscale = -1; 
+}
+else if ver == 1
+{
+sprite_index = front_player_spr;
+}
+else if ver == -1
+{
+sprite_index = Back_player_spr;
+}
+
 else
 {
     spd = lerp(spd,0,0.2);
@@ -81,6 +101,7 @@ if mouse
          with heal_hitbox_obj instance_destroy();
     }
 }
+
 
 </string>
           </argument>
