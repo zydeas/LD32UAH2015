@@ -28,11 +28,11 @@
             <string>//alarm[0] = 300;
 
 //measured in steps
-melee_frequency = 0;
-single_frequency = 0;
-nuke_frequency = 0;
-rocket_frequency = 0;
-machine_frequency = 500;
+melee_frequency = 600;
+single_frequency = 1500;
+nuke_frequency = 3000;
+rocket_frequency = 2500;
+machine_frequency = 0;
 shotgun_frequency = 0;
 
 spawner_tick = 0;

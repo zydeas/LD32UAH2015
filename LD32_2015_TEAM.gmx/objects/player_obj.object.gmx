@@ -38,6 +38,8 @@ lose_meter = 0;
 lose_total = 50;
 lose_decrement = 0.01;
 
+beam_cooldown = 0;
+
 physics_move_init();
 globalvar death_count;
 
@@ -69,6 +71,9 @@ global.death_count = 0;
 hor = keyboard_check(ord("D"))-keyboard_check(ord("A"));
 ver = keyboard_check(ord("S"))-keyboard_check(ord("W"));
 mouse = mouse_check_button(mb_left);
+mousermb = mouse_check_button(mb_right);
+
+beam_cooldown -= 1;
 
 //losing meter handling
 if( lose_meter - lose_decrement &lt; 0)
@@ -129,6 +134,9 @@ if mouse
          with heal_hitbox_obj instance_destroy();
     }
 }
+
+//healybeam
+if mousermb &amp;&amp; beam_cooldown == 0
 
 if bbox_left &lt; 0 
 {

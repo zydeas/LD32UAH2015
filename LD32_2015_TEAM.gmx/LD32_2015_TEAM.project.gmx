@@ -33,6 +33,7 @@
       <sprite>sprites\projectile_spr</sprite>
       <sprite>sprites\rocket_spr</sprite>
     </sprites>
+    <sprite>sprites\heal_beam_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\SCRUBREKT</background>
@@ -47,6 +48,7 @@
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
     <script>scripts\cool_guy_names.gml</script>
+    <script>scripts\point_beam_shoot.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\dank_font</font>
@@ -75,6 +77,7 @@
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>
     <object>objects\room_generator</object>
+    <object>objects\healy_beam</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
