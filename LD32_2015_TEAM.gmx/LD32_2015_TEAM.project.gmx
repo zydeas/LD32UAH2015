@@ -9,42 +9,58 @@
     <sprite>sprites\spr_brick</sprite>
     <sprite>sprites\player_mask_spr</sprite>
     <sprite>sprites\enemy_mask_spr</sprite>
+    <sprite>sprites\ene_melee_mask_spr</sprite>
     <sprite>sprites\spawner_mask_spr</sprite>
     <sprite>sprites\projectile_spr</sprite>
+    <sprite>sprites\rocket_spr</sprite>
     <sprite>sprites\weapon_spr</sprite>
+    <sprite>sprites\wep_singleshot_spr</sprite>
     <sprite>sprites\ene_single_mask_spr</sprite>
+    <sprite>sprites\ene_nuke_mask_spr</sprite>
+    <sprite>sprites\ene_rocket_mask_spr</sprite>
     <sprite>sprites\health_bar_spr</sprite>
+    <sprite>sprites\explosion_spr</sprite>
+    <sprite>sprites\sword_spr</sprite>
+    <sprite>sprites\knife_hitbox_spr</sprite>
+    <sprite>sprites\heal_hitbox_spr</sprite>
+    <sprite>sprites\side_player_spr</sprite>
+    <sprite>sprites\Back_player_spr</sprite>
+    <sprite>sprites\front_player_spr</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
-    <script>scripts\create_weapon_table.gml</script>
     <script>scripts\game_weapon_tables.gml</script>
     <script>scripts\weapon_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\projectile_obj</object>
-    <object>objects\weapon_obj</object>
+    <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
+    <object>objects\heal_hitbox_obj</object>
     <object>objects\camera_obj</object>
-    <object>objects\weapon_singleshot_obj</object>
-    <object>objects\health_bar_obj</object>
     <objects name="Enemies">
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
-      <object>objects\enemy_melee_obj</object>
       <object>objects\enemy_singleshot_obj</object>
+      <object>objects\enemy_nuke_obj</object>
+      <object>objects\enemy_melee_obj</object>
       <object>objects\enemy_rocket_obj</object>
       <object>objects\enemy_shotgun_obj</object>
+      <object>objects\health_bar_obj</object>
     </objects>
     <objects name="World">
       <object>objects\wall_obj</object>
       <object>objects\solid_obj</object>
     </objects>
-    <object>objects\manager_obj</object>
+    <objects name="Projectiles">
+      <object>objects\rocket_obj</object>
+      <object>objects\explosion_obj</object>
+      <object>objects\knife_hitbox_obj</object>
+      <object>objects\projectile_obj</object>
+    </objects>
     <object>objects\catalouger_obj</object>
   </objects>
   <rooms name="rooms">
@@ -52,7 +68,9 @@
     <room>rooms\room2</room>
     <room>rooms\test_building_room</room>
   </rooms>
-  <constants number="11">
+  <constants number="13">
+    <constant name="WEP_NUKE">4</constant>
+    <constant name="WEPTAG_RANGE">4</constant>
     <constant name="WEPTYPE_PROJECTILE">0</constant>
     <constant name="WEPTYPE_MELEE">1</constant>
     <constant name="WEPTAG_SPRITE">0</constant>
