@@ -2,10 +2,9 @@
 
 var gridw = 6;
 
-var grid = ds_grid_create(gridw,1);
-
-if ds_exists(grid,ds_type_grid)
+if instance_count > 0
 {
+    var grid = ds_grid_create(gridw,1);
     var obj,xx,yy,scalex,scaley;
     for(var i = 0;i<instance_count;i++)
     {
@@ -34,6 +33,9 @@ if ds_exists(grid,ds_type_grid)
     }
     //Cut off the bottom row so 
     ds_grid_resize(grid,gridw,ds_grid_height(grid)-1);
+    
+    return grid;
 }
+else
+return NULL;
 
-return grid;

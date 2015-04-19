@@ -71,9 +71,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\catalouge_start_room</room>
-    <room>rooms\level_room</room>
     <room>rooms\test_building_room</room>
     <room>rooms\test_build_room</room>
+    <room>rooms\level_room</room>
   </rooms>
   <constants number="31">
     <constant name="WEP_NUKE">4</constant>

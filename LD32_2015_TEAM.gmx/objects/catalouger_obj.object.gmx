@@ -104,15 +104,19 @@ ds_list_add(load_list,test_building_room);
             rm[? CAT_ROOM_WIDTH] = room_width;
             rm[? CAT_ROOM_HEIGHT] = room_height;
             
-            ds_map_add_map(global.building_catalouge,room_get_name(room),rm);
+            ds_map_add_map(global.building_catalouge,room,rm);
             
             loadPhase = 3;
+            room_goto(test_build_room);
         }
         break;
         
         case 3:
         {
-            
+            if mouse_check_button_pressed(mb_left)
+            {
+                catalouge_build_instances(test_building_room,mouse_x,mouse_y);
+            }
         }
         break;
     }

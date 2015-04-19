@@ -1,12 +1,12 @@
 ///room_catalouge_tiles()
 
-var gridw = 8;
 
-var grid = ds_grid_create(gridw,1);
-var tiles = tile_get_ids();
 
 if tile_get_count() > 0
 {
+    var gridw = 8;
+    var grid = ds_grid_create(gridw,1);
+    var tiles = tile_get_ids();
     for(var i = 0;i<array_length_1d(tiles);i++)
     {
         var tile = tiles[i];     
@@ -23,5 +23,7 @@ if tile_get_count() > 0
     }
     //Cut off the bottom row so 
     ds_grid_resize(grid,gridw,ds_grid_height(grid)-1);
+    return grid;
 }
-return grid;
+else
+return NULL;
