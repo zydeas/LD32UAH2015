@@ -49,13 +49,12 @@
     <object>objects\camera_obj</object>
     <object>objects\weapon_machinegun_obj</object>
     <object>objects\weapon_shotgun_obj</object>
-    <objects name="Enemies">
     <object>objects\weapon_singleshot_obj</object>
     <object>objects\building_obj</object>
     <object>objects\building2_obj</object>
     <object>objects\health_bar_obj</object>
     <object>objects\building3_obj</object>
-	<object>objects\startbttn_obj</object>
+    <object>objects\startbttn_obj</object>
     <objects name="Enemies">
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
@@ -73,12 +72,12 @@
     </objects>
     <objects name="Projectiles">
       <object>objects\rocket_obj</object>
-    <object>objects\manager_obj</object>
-    <object>objects\projectile_shotgun_obj</object>
+      <object>objects\projectile_shotgun_obj</object>
       <object>objects\explosion_obj</object>
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
     </objects>
+    <object>objects\manager_obj</object>
     <object>objects\catalouger_obj</object>
   </objects>
   <rooms name="rooms">
