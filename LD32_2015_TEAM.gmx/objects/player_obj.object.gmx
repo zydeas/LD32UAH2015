@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>dx = 0;
 dy = 0;
-
+maxRange = 200;
+range = 0;
 
 spd = 0;
 walkingSpd = 4;
@@ -117,7 +118,11 @@ else
 
 physics_move_collide(hor*spd,ver*spd,solid_obj,enemy_parent_obj);
 
-if mouse
+var dist = distance_to_point(mouse_x, mouse_y);
+
+range = maxRange - dist;
+
+if (mouse and range &gt; 0)
 {
     if !instance_exists(heal_hitbox_obj)
     {
