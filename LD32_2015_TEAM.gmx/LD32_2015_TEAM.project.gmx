@@ -23,7 +23,7 @@
     <sprite>sprites\sword_spr</sprite>
     <sprite>sprites\knife_hitbox_spr</sprite>
     <sprite>sprites\heal_hitbox_spr</sprite>
-    <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\side_player_spr</sprite>
     <sprite>sprites\Back_player_spr</sprite>
     <sprite>sprites\front_player_spr</sprite>
   </sprites>
@@ -35,11 +35,10 @@
     <script>scripts\weapon_data.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\projectile_obj</object>
-    <object>objects\weapon_obj</object>
+    <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
+    <object>objects\heal_hitbox_obj</object>
     <object>objects\camera_obj</object>
-    <object>objects\health_bar_obj</object>
     <objects name="Enemies">
       <object>objects\enemy_parent_obj</object>
       <object>objects\enemy_spawner_obj</object>
@@ -48,16 +47,18 @@
       <object>objects\enemy_melee_obj</object>
       <object>objects\enemy_rocket_obj</object>
       <object>objects\enemy_shotgun_obj</object>
+      <object>objects\health_bar_obj</object>
     </objects>
     <objects name="World">
       <object>objects\wall_obj</object>
       <object>objects\solid_obj</object>
     </objects>
-    <object>objects\manager_obj</object>
-    <object>objects\rocket_obj</object>
-    <object>objects\explosion_obj</object>
-    <object>objects\knife_hitbox_obj</object>
-    <object>objects\heal_hitbox_obj</object>
+    <objects name="Projectiles">
+      <object>objects\rocket_obj</object>
+      <object>objects\explosion_obj</object>
+      <object>objects\knife_hitbox_obj</object>
+      <object>objects\projectile_obj</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>

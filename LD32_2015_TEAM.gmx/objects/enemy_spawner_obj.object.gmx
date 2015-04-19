@@ -2,7 +2,7 @@
 <object>
   <spriteName>spawner_mask_spr</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 120;
+            <string>alarm[0] = 300;
 </string>
           </argument>
         </arguments>
@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>alarm[0] = 120;
 
-instance_create(x, y, choose(enemy_melee_obj, enemy_singleshot_obj, enemy_rocket_obj, enemy_nuke_obj));
+instance_create(x, y, choose(enemy_melee_obj, ene_rocket_mask_spr, enemy_nuke_obj, enemy_singleshot_obj));
 </string>
           </argument>
         </arguments>
