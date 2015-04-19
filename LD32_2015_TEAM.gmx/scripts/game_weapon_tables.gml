@@ -2,13 +2,14 @@
 
 global.weaponMap = ds_map_create();
 
-var shotgun,singleShot,melee,rocket;
+var shotgun,singleShot,melee,rocket, machinegun;
 
 nuke = ds_map_create();
 shotgun = ds_map_create();
 singleShot = ds_map_create();
 melee = ds_map_create();
 rocket = ds_map_create();
+machinegun  = ds_map_create();
 
 ds_map_add_map(global.weaponMap, WEP_NUKE ,nuke);
 
@@ -21,10 +22,17 @@ ds_map_add(nuke, WEPTAG_PROJECTILE,  explosion_obj);
 
 ds_map_add_map(global.weaponMap, WEP_SHOTGUN ,shotgun);
 
-ds_map_add(shotgun, WEPTAG_SPRITE,      NULL);
+ds_map_add(shotgun, WEPTAG_SPRITE,      weapon_spr);
 ds_map_add(shotgun, WEPTAG_TYPE,        WEPTYPE_PROJECTILE);
 ds_map_add(shotgun, WEPTAG_FIRE_RATE,   1);
-ds_map_add(shotgun, WEPTAG_PROJECTILE,  projectile_obj);
+ds_map_add(shotgun, WEPTAG_PROJECTILE,  weapon_shotgun_obj );
+
+ds_map_add_map(global.weaponMap, WEP_MACHINEGUN ,machinegun);
+
+ds_map_add(machinegun, WEPTAG_SPRITE,      weapon_spr);
+ds_map_add(machinegun, WEPTAG_TYPE,        WEPTYPE_PROJECTILE);
+ds_map_add(machinegun, WEPTAG_FIRE_RATE,   1);
+ds_map_add(machinegun, WEPTAG_PROJECTILE,  weapon_machinegun_obj );
 
 ds_map_add_map(global.weaponMap, WEP_SINGLESHOT ,singleShot);
 
