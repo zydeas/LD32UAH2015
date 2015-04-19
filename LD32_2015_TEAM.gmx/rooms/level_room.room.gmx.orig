@@ -118,12 +118,10 @@
     <instance objName="wall_obj" x="1056" y="704" name="inst_72173F77" locked="0" code="" scaleX="6" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="wall_obj" x="608" y="416" name="inst_A83516DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="camera_obj" x="0" y="0" name="inst_4A4D46E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-<<<<<<< HEAD
     <instance objName="manager_obj" x="32" y="0" name="inst_67E4C871" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+<<<<<<< HEAD
     <instance objName="enemy_melee_obj" x="96" y="288" name="inst_F6FC749C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_singleshot_obj" x="0" y="288" name="inst_A46F1109" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="weapon_shotgun_obj" x="128" y="256" name="inst_98ED6B59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="weapon_machinegun_obj" x="480" y="288" name="inst_269DCEF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="352" y="32" name="inst_AF9D3C1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="864" y="288" name="inst_53280E5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="1152" y="192" name="inst_6778B87D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -132,8 +130,9 @@
     <instance objName="enemy_spawner_obj" x="320" y="864" name="inst_09B31AC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="608" y="128" name="inst_98F81820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
 =======
-    <instance objName="invisible_enemy_spawner_obj" x="480" y="416" name="inst_B347A8D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
->>>>>>> LDREPO/Octobra2
+    <instance objName="weapon_shotgun_obj" x="128" y="256" name="inst_98ED6B59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="weapon_machinegun_obj" x="480" y="288" name="inst_269DCEF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+>>>>>>> LDREPO/Charlaxy
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

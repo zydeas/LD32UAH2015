@@ -14,7 +14,6 @@
     <sprite>sprites\projectile_spr</sprite>
     <sprite>sprites\rocket_spr</sprite>
     <sprite>sprites\weapon_spr</sprite>
-<<<<<<< HEAD
     <sprite>sprites\wep_singleshot_spr</sprite>
     <sprite>sprites\ene_single_mask_spr</sprite>
     <sprite>sprites\ene_nuke_mask_spr</sprite>
@@ -27,33 +26,17 @@
     <sprite>sprites\side_player_spr</sprite>
     <sprite>sprites\Back_player_spr</sprite>
     <sprite>sprites\front_player_spr</sprite>
-=======
-    <sprite>sprites\ene_single_mask_spr</sprite>
-    <sprite>sprites\building_spr</sprite>
-    <sprite>sprites\health_bar_spr</sprite>
-    <sprite>sprites\building2_spr</sprite>
-    <sprite>sprites\building3_spr</sprite>
-    <sprite>sprites\sprite9</sprite>
-    <sprite>sprites\startbttn_spr</sprite>
->>>>>>> LDREPO/Octobra2
   </sprites>
-  <backgrounds name="background">
-    <background>background\placeholder_bg</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
-<<<<<<< HEAD
-=======
-    <script>scripts\create_weapon_table.gml</script>
->>>>>>> LDREPO/Octobra2
     <script>scripts\game_weapon_tables.gml</script>
     <script>scripts\weapon_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
   </scripts>
   <objects name="objects">
-<<<<<<< HEAD
     <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
     <object>objects\heal_hitbox_obj</object>
@@ -70,31 +53,11 @@
       <object>objects\enemy_rocket_obj</object>
       <object>objects\enemy_shotgun_obj</object>
       <object>objects\health_bar_obj</object>
-=======
-    <object>objects\projectile_parent_obj</object>
-    <object>objects\weapon_obj</object>
-    <object>objects\player_obj</object>
-    <object>objects\camera_obj</object>
-    <object>objects\weapon_singleshot_obj</object>
-    <object>objects\building_obj</object>
-    <object>objects\building2_obj</object>
-    <object>objects\health_bar_obj</object>
-    <object>objects\building3_obj</object>
-	<object>objects\startbttn_obj</object>
-    <objects name="Enemies">
-      <object>objects\enemy_parent_obj</object>
-      <object>objects\enemy_spawner_obj</object>
-      <object>objects\enemy_melee_obj</object>
-      <object>objects\enemy_singleshot_obj</object>
-      <object>objects\enemy_rocket_obj</object>
-      <object>objects\enemy_shotgun_obj</object>
->>>>>>> LDREPO/Octobra2
     </objects>
     <objects name="World">
       <object>objects\wall_obj</object>
       <object>objects\solid_obj</object>
     </objects>
-<<<<<<< HEAD
     <objects name="Projectiles">
       <object>objects\rocket_obj</object>
       <object>objects\explosion_obj</object>
@@ -111,17 +74,6 @@
   <constants number="13">
     <constant name="WEP_NUKE">4</constant>
     <constant name="WEPTAG_RANGE">4</constant>
-=======
-    <object>objects\manager_obj</object>
-    <object>objects\projectile_shotgun_obj</object>
-  </objects>
-  <rooms name="rooms">
-    <room>rooms\level_room</room>
-    <room>rooms\room3</room>
-    <room>rooms\splashscreen_room</room>
-  </rooms>
-  <constants number="11">
->>>>>>> LDREPO/Octobra2
     <constant name="WEPTYPE_PROJECTILE">0</constant>
     <constant name="WEPTYPE_MELEE">1</constant>
     <constant name="WEPTAG_SPRITE">0</constant>

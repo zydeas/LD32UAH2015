@@ -25,13 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>event_inherited();
 
 //weapon_id = instance_create(x, y, weapon_singleshot_obj);
 
+<<<<<<< HEAD
+//Moved this to the create event, because we don't 
+//need to create a new mp grid every step. -CL
+
 
 //collide_ids = ds_list_create();
+=======
+grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
+path = path_add();
+mp_grid_add_instances(path, wall_obj, 1);
 
 weapon = WEP_MELEE;
 </string>
@@ -60,17 +67,7 @@ weapon = WEP_MELEE;
 {
     instance_destroy();
 }*/
-=======
-            <string>_weapon = NULL;
-
-//Moved this to the create event, because we don't 
-//need to create a new mp grid every step. -CL
-grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
-path = path_add();
-mp_grid_add_instances(path, wall_obj, 1);
-
-collide_ids = ds_list_create();
->>>>>>> LDREPO/Octobra2
+>>>>>>> LDREPO/RyanKline
 </string>
           </argument>
         </arguments>
@@ -96,13 +93,37 @@ collide_ids = ds_list_create();
 <<<<<<< HEAD
             <string>
 =======
-            <string>mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
+            <string>event_inherited();
+
+mp_grid_path(grid, path, x, y, player_obj.x, player_obj.y, 1);
 path_start(path, 3, "", 1);
->>>>>>> LDREPO/Octobra2
+>>>>>>> LDREPO/RyanKline
 
+/*player_x = player_obj.x;
+player_y = player_obj.y;
 
-//Update our collide list, so we can not be 
-//hit by the same bullet more than once
+weapon_id.image_angle = point_direction(x, y, player_x, player_y)
+
+if(weapon_id.image_angle &gt; 90 &amp;&amp; weapon_id.image_angle &lt;=270)
+{
+    weapon_id.image_yscale = -1;
+}
+else
+{
+    weapon_id.image_yscale = 1;
+}
+
+next_x = x + 12 + lengthdir_x(25, weapon_id.image_angle);
+next_y = y + 12 + lengthdir_y(25, weapon_id.image_angle);
+
+weapon_id.x = next_x;
+weapon_id.y = next_y;*/
+
+if(current_health &lt;= 0)
+{
+    instance_destroy();
+    
+}
 </string>
           </argument>
         </arguments>
