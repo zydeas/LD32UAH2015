@@ -21,12 +21,12 @@ if ds_exists(grid,ds_type_grid)
                 scalex = ins.image_xscale;
                 scaley = ins.image_yscale;
                 
-                grid[# 0,i] = obj;
-                grid[# 1,i] = xx;
-                grid[# 2,i] = yy;
-                grid[# 3,i] = scalex;
-                grid[# 4,i] = scaley;
-                grid[# 5,i] = NULL;
+                grid[# CAT_INS_OBJID,i] = obj;
+                grid[# CAT_INS_X,i] = xx;
+                grid[# CAT_INS_Y,i] = yy;
+                grid[# CAT_INS_SCALEX,i] = scalex;
+                grid[# CAT_INS_SCALEY,i] = scaley;
+                grid[# CAT_INS_META,i] = NULL;
                 
                 ds_grid_resize(grid,gridw,ds_grid_height(grid)+1);
             }
