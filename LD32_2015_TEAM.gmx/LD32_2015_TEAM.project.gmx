@@ -7,27 +7,40 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_brick</sprite>
-    <sprite>sprites\player_mask_spr</sprite>
-    <sprite>sprites\enemy_mask_spr</sprite>
-    <sprite>sprites\ene_melee_mask_spr</sprite>
     <sprite>sprites\spawner_mask_spr</sprite>
-    <sprite>sprites\projectile_spr</sprite>
-    <sprite>sprites\rocket_spr</sprite>
-    <sprite>sprites\weapon_spr</sprite>
-    <sprite>sprites\wep_singleshot_spr</sprite>
-    <sprite>sprites\ene_single_mask_spr</sprite>
-    <sprite>sprites\ene_nuke_mask_spr</sprite>
-    <sprite>sprites\ene_rocket_mask_spr</sprite>
+    <sprite>sprites\room_generator_mask</sprite>
     <sprite>sprites\health_bar_spr</sprite>
-    <sprite>sprites\explosion_spr</sprite>
-    <sprite>sprites\sword_spr</sprite>
-    <sprite>sprites\knife_hitbox_spr</sprite>
     <sprite>sprites\heal_hitbox_spr</sprite>
-    <sprite>sprites\side_player_spr</sprite>
-    <sprite>sprites\Back_player_spr</sprite>
-    <sprite>sprites\front_player_spr</sprite>
+    <sprites name="enemy_sprites">
+      <sprite>sprites\ene_rocket_mask_spr</sprite>
+      <sprite>sprites\ene_nuke_mask_spr</sprite>
+      <sprite>sprites\ene_single_mask_spr</sprite>
+      <sprite>sprites\ene_melee_mask_spr</sprite>
+      <sprite>sprites\enemy_mask_spr</sprite>
+    </sprites>
+    <sprites name="player_sprite">
+      <sprite>sprites\Back_player_spr</sprite>
+      <sprite>sprites\side_player_spr</sprite>
+      <sprite>sprites\front_player_spr</sprite>
+      <sprite>sprites\player_mask_spr</sprite>
+    </sprites>
+    <sprites name="weapon_sprite">
+      <sprite>sprites\weapon_spr</sprite>
+      <sprite>sprites\wep_singleshot_spr</sprite>
+      <sprite>sprites\sword_spr</sprite>
+      <sprite>sprites\explosion_spr</sprite>
+      <sprite>sprites\knife_hitbox_spr</sprite>
+      <sprite>sprites\projectile_spr</sprite>
+      <sprite>sprites\rocket_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\SCRUBREKT</background>
+  </backgrounds>
+  <backgrounds name="background">
+    <background>background\test_tiles_spr</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\physics_move_collide.gml</script>
@@ -37,6 +50,9 @@
     <script>scripts\enemy_data.gml</script>
     <script>scripts\physics_move_init.gml</script>
     <script>scripts\room_catalouge_instances.gml</script>
+    <script>scripts\cool_guy_names.gml</script>
+    <script>scripts\room_catalouge_tiles.gml</script>
+    <script>scripts\catalouge_build_instances.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\manager_obj</object>
@@ -60,12 +76,17 @@
       <object>objects\weapon_shotgun_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
+    <object>objects\losing_text</object>
+    <object>objects\room_generator</object>
     <object>objects\ticker</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\level_room</room>
-    <room>rooms\room2</room>
+    <room>rooms\catalouge_start_room</room>
     <room>rooms\test_building_room</room>
+    <room>rooms\test_build_room</room>
+    <room>rooms\level_room</room>
+    <room>rooms\room_lose</room>
+    <room>rooms\random_test_room</room>
   </rooms>
   <constants number="23">
     <constant name="ENM_ARMOR">2</constant>
@@ -80,6 +101,7 @@
     <constant name="NULL">-1</constant>
     <constant name="WEP_MACHINEGUN">5</constant>
     <constant name="WEP_MELEE">3</constant>
+  <constants number="31">
     <constant name="WEP_NUKE">4</constant>
     <constant name="WEP_ROCKET">2</constant>
     <constant name="WEP_SHOTGUN">0</constant>
@@ -91,6 +113,24 @@
     <constant name="WEPTAG_TYPE">2</constant>
     <constant name="WEPTYPE_MELEE">1</constant>
     <constant name="WEPTYPE_PROJECTILE">0</constant>
+    <constant name="CAT_INS_OBJID">0</constant>
+    <constant name="CAT_INS_X">1</constant>
+    <constant name="CAT_INS_Y">2</constant>
+    <constant name="CAT_INS_SCALEX">3</constant>
+    <constant name="CAT_INS_SCALEY">4</constant>
+    <constant name="CAT_INS_META">5</constant>
+    <constant name="CAT_TILE_BACK">0</constant>
+    <constant name="CAT_TILE_X">1</constant>
+    <constant name="CAT_TILE_Y">2</constant>
+    <constant name="CAT_TILE_LEFT">3</constant>
+    <constant name="CAT_TILE_TOP">4</constant>
+    <constant name="CAT_TILE_WIDTH">5</constant>
+    <constant name="CAT_TILE_HEIGHT">6</constant>
+    <constant name="CAT_TILE_DEPTH">7</constant>
+    <constant name="CAT_INSTANCES">0</constant>
+    <constant name="CAT_TILES">1</constant>
+    <constant name="CAT_ROOM_WIDTH">2</constant>
+    <constant name="CAT_ROOM_HEIGHT">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
