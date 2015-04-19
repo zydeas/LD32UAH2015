@@ -82,7 +82,7 @@ else
 
 if(lose_meter &gt;= lose_total)
 {
-    room_goto(3);
+    room_goto(1);
 }
 
 //Not losing meter handling

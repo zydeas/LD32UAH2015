@@ -38,4 +38,3 @@ if instance_count > 0
 }
 else
 return NULL;
-
