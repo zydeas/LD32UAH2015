@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>solid_obj</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,11 +25,62 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>_weapon = null;
-_speed = null;
-_health = null;
+            <string>max_health = 100;
+current_health = 100;
+healtick = 0;
 
+_weapon = NULL;
+
+weapon = NULL;
+weapon_aim = 0;
+weapon_x = x;
+weapon_y = y;
+weapon_scale = 1;
+fireTimer = 60;
+
+healthbar_id = instance_create(x, y, health_bar_obj);
+path = path_add();
+
+
+walkSpd = 1;
+runSpd = 3;
+
+physics_move_init();
+
+dx = 0;
+dy = 0;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+<<<<<<< HEAD
+    <event eventtype="2" enumb="0">
+=======
+    <event eventtype="1" enumb="0">
+>>>>>>> LDREPO/Charlaxy
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+<<<<<<< HEAD
+            <string></string>
+=======
+            <string>global.death_count++;
+</string>
+>>>>>>> LDREPO/Charlaxy
           </argument>
         </arguments>
       </action>
@@ -51,12 +102,257 @@ _health = null;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>if instance_exists(player_obj)
+{
+    weapon_aim = point_direction(x, y, player_obj.x, player_obj.y);
+}
+
+weapon_x = x+lengthdir_x(25, weapon_aim);
+weapon_y = y+lengthdir_y(25, weapon_aim);
+
+if(weapon_aim &gt; 90 &amp;&amp; weapon_aim &lt;=270)
+{
+    weapon_scale = -1;
+}
+else
+{
+    weapon_scale = 1;
+}
+
+var wepData = weapon_data(weapon);
+
+if wepData != NULL
+{
+    switch wepData[? WEPTAG_TYPE ]
+    {
+        case WEPTYPE_PROJECTILE:
+            if fireTimer &lt;= 0
+            {
+                if object_exists(wepData[? WEPTAG_PROJECTILE ])
+                {
+                    var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
+                    
+                    with o
+                    {
+                        direction = other.weapon_aim;
+                        creator = other.id;
+                    }
+                }
+                
+                fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
+            }
+            else
+            {
+                fireTimer -= 1;
+            }
+        break;
+        
+        case WEPTYPE_MELEE:
+            if instance_exists(player_obj)
+            {
+                var dist = distance_to_object(player_obj);
+                if (fireTimer &lt;= 0 and (dist &lt;= (wepData[? WEPTAG_RANGE ] * 50)))  
+                {
+
+                    var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);    
+                    
+                    with o
+                        {
+                            direction = other.weapon_aim;
+                            creator = other.id;
+                        }
+                    fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
+                }else
+                    fireTimer -= 1;
+            }
+                break;
+            }
+            
+}
+
 <<<<<<< HEAD
-            <string></string>
+//If we are colliding with another enemy, we need to move away from them.
+if place_meeting(x,y,enemy_parent_obj)
+{
+    var obj = instance_place(x,y,enemy_parent_obj);
+    var px,py,dir;
+    if (obj.x != x) and (obj.y != y)
+    {
+        dir = point_direction(obj.x,obj.y,x,y);
+    }
+    else
+    {
+        dir = irandom(3)*90;
+    }
+    px = lengthdir_x(runSpd,dir);
+    py = lengthdir_y(runSpd,dir);
+    physics_move_collide(px,py,solid_obj,NULL);
+}
+else if instance_exists(player_obj)
+{
+    if point_distance(x,y,player_obj.x,player_obj.y) &gt; 64 or collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) != noone
+    {
+        path_clear_points(path);
+        mp_grid_path(global.enemy_motion_grid, path, x, y, player_obj.x, player_obj.y, 1);
+        path_set_precision(path,1);
+        path_start(path, 3, 0, 1);
+    }
+    else
+    {
+        path_end();
+    }
+}
 =======
-            <string>//_weapon.
+if(current_health == 0)
+{
+    global.death_count++;
+}
+
+>>>>>>> LDREPO/Charlaxy
+//Old Healthbar
+/*if(current_health &gt;=0)
+{
+    healthbar_id.image_xscale = current_health / max_health;
+}
+else
+{
+    healthbar_id.image_xscale = 0;
+}
+
+healthbar_id.x = x - 4;
+healthbar_id.y = y - 20;*/
 </string>
->>>>>>> clkerl
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="heal_hitbox_obj">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if((current_health &lt; max_health*2))
+    {
+        if(instance_exists(heal_hitbox_obj) and place_meeting(x,y,heal_hitbox_obj)){
+        current_health += global.healValue;
+        }
+    }
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="explosion_obj">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>current_health -= 10 - other.image_xscale;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="projectile_obj">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (other.creator != id)
+{
+current_health -= 10;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(ord("P"))
+{
+    draw_set_alpha(0.25);
+    draw_path(path,0,0,true);
+    draw_set_alpha(1);
+}
+
+draw_self();
+var hpScale = current_health / max_health;
+//Draw a basic health bar
+var hpscale = current_health / max_health;
+draw_set_color(c_maroon);
+draw_rectangle(x-16,y-21,x+(16*hpscale),y-26,false);
+draw_set_color(c_red);
+draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
+
+if weapon != NULL
+{
+    var wepData = weapon_data(weapon);
+    var wepSpr = wepData[? WEPTAG_SPRITE];
+    if sprite_exists(wepSpr)
+    {
+        draw_sprite_ext(wepSpr,0,weapon_x,weapon_y,1,weapon_scale,weapon_aim,c_white,1);
+    }
+}
+
+
+//draw_sprite_ext(health_bar_spr,0,x-4,y-20,current_health / max_health,1,0,c_white,1);
+</string>
           </argument>
         </arguments>
       </action>
