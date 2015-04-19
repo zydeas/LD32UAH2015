@@ -35,7 +35,7 @@ walkingSpd = 4;
 enemies_alive = 0;
 
 lose_meter = 0;
-lose_total = 10;
+lose_total = 50;
 lose_decrement = 0.01;
 
 physics_move_init();
