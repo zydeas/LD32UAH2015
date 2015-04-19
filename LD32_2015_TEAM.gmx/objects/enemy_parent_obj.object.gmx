@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = choose(ENMTYPE_OWL, ENMTYPE_CROW, ENMTYPE_ROBIN, ENMTYPE_PIDGEON, ENMTYPE_VULTURE);
+            <string>//chooses type
+type = choose(ENMTYPE_OWL, ENMTYPE_CROW, ENMTYPE_ROBIN, ENMTYPE_PIDGEON, ENMTYPE_VULTURE);
 
 enmTable = enemy_data(type);
 
@@ -33,11 +34,29 @@ max_health = enmTable[? ENM_HEALTH];
 current_health = max_health;
 healtick = 0;
 
+handle_length = random_range(0, array_length_1d(global.sick_handles));
+first_length = random_range(0, array_length_1d(global.first_names));
+last_length = random_range(0, array_length_1d(global.last_names));
+
+name_determine = random_range(0,4);
+
+if(name_determine &lt;= 3)
+{
+    enemy_name = global.first_names[first_length] + " " + global.last_names[last_length]; 
+}
+
+else
+{
+    enemy_name = global.sick_handles[handle_length];
+}
+
+player_obj.enemies_alive++;
+
 armor = enmTable[? ENM_ARMOR];
 
 _weapon = NULL;
 
-weapon = choose(WEP_NUKE,WEP_SHOTGUN, WEP_SINGLESHOT, WEP_ROCKET, WEP_MELEE, WEP_MACHINEGUN, WEP_SHOTGUN );
+weapon = choose(WEP_NUKE,WEP_SHOTGUN, WEP_SINGLESHOT, WEP_ROCKET, WEP_MELEE, WEP_MACHINEGUN );
 
 weapon_aim = 0;
 weapon_x = x;
@@ -102,6 +121,9 @@ dy = 0;
           <argument>
             <kind>1</kind>
             <string>global.death_count++;
+
+player_obj.lose_meter += 1;
+player_obj.enemies_alive--;
 </string>
           </argument>
         </arguments>
@@ -368,6 +390,13 @@ draw_set_color(c_maroon);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26,false);
 draw_set_color(c_red);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
+
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_text(x, y-40, enemy_name);
+draw_set_halign(fa_left);
+
+
 if type != NULL
 {
     var enmData = enemy_data(type);

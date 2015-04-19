@@ -58,10 +58,7 @@ weapon = WEP_NUKE;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*with(weapon_id)
-{
-    instance_destroy();
-}*/
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
