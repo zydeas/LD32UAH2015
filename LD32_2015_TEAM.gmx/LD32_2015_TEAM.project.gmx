@@ -72,7 +72,6 @@
     <script>scripts\catalouge_build_instances.gml</script>
     <script>scripts\point_beam_shoot.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
