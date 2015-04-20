@@ -5,10 +5,15 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\bg_loop_snd</sound>
     <sound>sound\bg_clap_snd</sound>
     <sound>sound\bg_kick_snd</sound>
     <sound>sound\airhorn_snd</sound>
+    <sound>sound\owlchirp_snd</sound>
+    <sound>sound\eagle_snd</sound>
+    <sound>sound\chirp_snd</sound>
+    <sound>sound\jackdaw_snd</sound>
+    <sound>sound\rooster_snd</sound>
+    <sound>sound\loon_snd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_brick</sprite>
@@ -78,11 +83,11 @@
       <object>objects\explosion_obj</object>
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
+      <object>objects\weapon_airhorn_obj</object>
       <object>objects\mini_gun_proj_obj</object>
       <object>objects\weapon_machinegun_obj</object>
       <object>objects\weapon_minigun_obj</object>
       <object>objects\weapon_shotgun_obj</object>
-      <object>objects\weapon_airhorn_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>

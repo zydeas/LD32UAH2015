@@ -28,5 +28,4 @@ global.sick_handles[2] = "Kurt Cocaine";
 global.sick_handles[3] = "Solipants";
 global.sick_handles[4] = "Frodo Teabaggins";
 global.sick_handles[5] = "Dyslexic_stoner_240";
-global.sick_handles[6] = "xxX_qu1ckscoper pussyDestroyer_Xxy69";
-global.sick_handles[7] = "Aloha Snackbar";
+global.sick_handles[6] = "xxX_qu1ckscoper pu$$yDestroyer_Xxy69";

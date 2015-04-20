@@ -30,12 +30,12 @@
 //measured in steps
 melee_frequency = 1000;
 single_frequency = 1200;
-nuke_frequency = 3000;
-rocket_frequency = 5000;
-machine_frequency = 1900;
-shotgun_frequency = 2200;
-airhorn_frequency = 2300;
-minigun_frequency = 8000;
+nuke_frequency = 2000;
+rocket_frequency = 3000;
+machine_frequency = 1000;
+shotgun_frequency = 1800;
+airhorn_frequency = 1337;
+minigun_frequency = 4000;
 
 spawner_tick = 0;
 </string>
