@@ -464,7 +464,6 @@ id.killcount++;
     draw_path(path,0,0,true);
     draw_set_alpha(1);
 }
-draw_self();
 var hpScale = current_health / max_health;
 //Draw a basic health bar
 var hpscale = current_health / max_health;

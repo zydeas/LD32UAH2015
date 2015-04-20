@@ -71,12 +71,19 @@ ds_list_add(load_list,test_building_room);
     {
         case 0:
         {
-            var ri = load_list[|roomIndex];
-            if room_exists(ri)
+            if roomIndex &lt; ds_list_size(load_list)
             {
-                room_goto(ri);
-                loadPhase = 1;
-                timer = 5;
+                var ri = load_list[|roomIndex];
+                if room_exists(ri)
+                {
+                    room_goto(ri);
+                    loadPhase = 1;
+                    timer = 10;
+                }
+            }
+            else
+            {
+                loadPhase = 3;
             }
         }
         break;
@@ -106,20 +113,46 @@ ds_list_add(load_list,test_building_room);
             
             ds_map_add_map(global.building_catalouge,room,rm);
             
-            loadPhase = 3;
-            room_goto(test_build_room);
+            
+            roomIndex += 1;
+            loadPhase = 0;
         }
         break;
         
         case 3:
         {
-            if mouse_check_button_pressed(mb_left)
-            {
-                catalouge_build_instances(test_building_room,mouse_x,mouse_y);
-            }
+            loaded = true;
+            room_goto(game_init_room);
         }
         break;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !loaded
+{
+    draw_set_color(c_black);
+    draw_rectangle(0,0,window_get_width(),window_get_height(),0);
 }
 </string>
           </argument>
