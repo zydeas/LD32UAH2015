@@ -120,6 +120,8 @@
       <room>rooms\clark_long_room</room>
       <room>rooms\clark_L_room</room>
       <room>rooms\clark_rool_longtop</room>
+      <room>rooms\cl_room1_room</room>
+      <room>rooms\cl_room2_room</room>
     </rooms>
     <rooms name="Game">
       <room>rooms\start_up</room>
