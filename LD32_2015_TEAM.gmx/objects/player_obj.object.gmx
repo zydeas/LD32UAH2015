@@ -44,6 +44,7 @@ beam_cooldown = 0;
 physics_move_init();
 globalvar death_count;
 
+global.time_elapsed = 0;
 global.death_count = 0;
 
 xaxis = 0;
@@ -71,11 +72,11 @@ magnitude = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var timer = get_timer();
+            <string>//var timer = global.time_elapsed
 
-if(global.leaderboard_time &lt; timer)
+if(global.leaderboard_time &lt; global.time_elapsed)
 {
-    global.leaderboard_time = timer;
+    global.leaderboard_time = global.time_elapsed;
 }
 
 room_goto_next();
