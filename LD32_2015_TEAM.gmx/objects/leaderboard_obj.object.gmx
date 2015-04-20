@@ -25,18 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var time_seconds = global.leaderboard_time % 60;
-var time_minutes = abs((global.leaderboard_time / 60) - 0.5); //0.5 subtracted for rounding
-var time_hours = abs((global.leaderboard_time / 3600) - 0.5); // 0.5 subtracted for rounding
+            <string>var time_seconds = global.leaderboard_time / room_speed;
+var time_minutes = floor(time_seconds / 60);
 
-var seconds_string_l = string_format(time_seconds, 2, 2);
-var minutes_string_l = string_format(time_minutes, 2, 0);
-var hours_string_l = string_format(time_hours, 2, 0);
+var time_display = "";
+
+if(time_minutes &gt; 0)
+{
+    time_seconds -= time_minutes * 60;
+    time_display += string(time_minutes) + ":";
+    
+    if(time_seconds &lt; 10)
+    {
+        time_display += "0";
+    }
+    
+    time_display += string_format(time_seconds, 2, 2);
+}
+else
+{
+    time_display += string(time_seconds);
+}
 
 draw_set_color(c_white);
 
 draw_text(x, y, "Best Population: " + string(global.leaderboard_population));
-draw_text(x, y + 16, "Best Time: " + hours_string_l + ":" + minutes_string_l + ":" + seconds_string_l);
+draw_text(x, y + 16, "Best Time: " + time_display);
 
 </string>
           </argument>
