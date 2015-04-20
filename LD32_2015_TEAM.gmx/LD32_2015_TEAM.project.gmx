@@ -92,7 +92,7 @@
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
       <object>objects\weapon_airhorn_obj</object>
-      <object>objects\mini_gun_proj_obj</object>
+      <object>objects\weapon_machinegun_obj</object>
       <object>objects\weapon_machinegun_obj</object>
       <object>objects\weapon_minigun_obj</object>
       <object>objects\weapon_shotgun_obj</object>
