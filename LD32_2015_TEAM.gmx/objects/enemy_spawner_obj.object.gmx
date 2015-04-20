@@ -60,68 +60,69 @@ spawner_tick = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-spawner_tick += 1;
-
-
-//spawns melee unit after x ticks where x is melee frequency
-if( melee_frequency &gt; 0 &amp;&amp; spawner_tick % melee_frequency == 0 )
+            <string>if instance_exists(player_obj) and point_distance(x,y,player_obj.x,player_obj.y) &lt; 2048
 {
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_PIDGEON;
-    temp_enemy_id.weapon = WEP_MELEE;
-}
-//spawn for minigunners
-if(spawner_tick % minigun_frequency == 0 &amp;&amp; minigun_frequency != 0)
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_VULTURE;
-    temp_enemy_id.weapon = WEP_MINI;
-}
-
-//spawn for singles
-if( single_frequency &gt; 0 &amp;&amp; spawner_tick % single_frequency == 0 )
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_CROW;
-    temp_enemy_id.weapon = WEP_SINGLESHOT;
-}
-
-//spawn for nukes
-if( nuke_frequency &gt; 0 &amp;&amp; spawner_tick % nuke_frequency == 0 )
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_OWL;
-    temp_enemy_id.weapon = WEP_NUKE;
-}
-
-//Spawn for rockets
-if( rocket_frequency &gt; 0 &amp;&amp; spawner_tick % rocket_frequency == 0 )
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_ROBIN;
-    temp_enemy_id.weapon = WEP_ROCKET;
-}
-
-if( machine_frequency &gt; 0 &amp;&amp; spawner_tick % machine_frequency == 0 )
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_VULTURE;
-    temp_enemy_id.weapon = WEP_MACHINEGUN;
-}
-
-if( shotgun_frequency &gt; 0 &amp;&amp; spawner_tick % shotgun_frequency == 0 )
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_CROW;
-    temp_enemy_id.weapon = WEP_SHOTGUN;
-}
-
-if(spawner_tick % airhorn_frequency == 0 &amp;&amp; airhorn_frequency != 0)
-{
-    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
-    temp_enemy_id.type = ENMTYPE_AIRHORN;
-    temp_enemy_id.weapon = WEP_AIRHORN;
+    spawner_tick += 1;
+    
+    //spawns melee unit after x ticks where x is melee frequency
+    if( melee_frequency &gt; 0 &amp;&amp; spawner_tick % melee_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_PIDGEON;
+        temp_enemy_id.weapon = WEP_MELEE;
+    }
+    //spawn for minigunners
+    if(spawner_tick % minigun_frequency == 0 &amp;&amp; minigun_frequency != 0)
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_VULTURE;
+        temp_enemy_id.weapon = WEP_MINI;
+    }
+    
+    //spawn for singles
+    if( single_frequency &gt; 0 &amp;&amp; spawner_tick % single_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_CROW;
+        temp_enemy_id.weapon = WEP_SINGLESHOT;
+    }
+    
+    //spawn for nukes
+    if( nuke_frequency &gt; 0 &amp;&amp; spawner_tick % nuke_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_OWL;
+        temp_enemy_id.weapon = WEP_NUKE;
+    }
+    
+    //Spawn for rockets
+    if( rocket_frequency &gt; 0 &amp;&amp; spawner_tick % rocket_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_ROBIN;
+        temp_enemy_id.weapon = WEP_ROCKET;
+    }
+    
+    if( machine_frequency &gt; 0 &amp;&amp; spawner_tick % machine_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_VULTURE;
+        temp_enemy_id.weapon = WEP_MACHINEGUN;
+    }
+    
+    if( shotgun_frequency &gt; 0 &amp;&amp; spawner_tick % shotgun_frequency == 0 )
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_CROW;
+        temp_enemy_id.weapon = WEP_SHOTGUN;
+    }
+    
+    if(spawner_tick % airhorn_frequency == 0 &amp;&amp; airhorn_frequency != 0)
+    {
+        temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+        temp_enemy_id.type = ENMTYPE_AIRHORN;
+        temp_enemy_id.weapon = WEP_AIRHORN;
+    }
 }
 </string>
           </argument>

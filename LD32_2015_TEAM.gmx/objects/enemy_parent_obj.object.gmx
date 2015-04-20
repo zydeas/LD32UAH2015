@@ -130,6 +130,8 @@ killer_weapon = NULL;
 player_obj.lose_meter += 1;
 player_obj.enemies_alive--;
 
+path_delete(path);
+
 for (i = 1; i &lt; array_length_1d(global.deaths); i++)
 {
     global.deaths[i - 1] = global.deaths[i];
@@ -293,16 +295,24 @@ if place_meeting(x,y,enemy_parent_obj)
 }
 else if instance_exists(player_obj)
 {
-    if point_distance(x,y,player_obj.x,player_obj.y) &gt; 64 or collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) != noone
+    if point_distance(x,y,player_obj.x,player_obj.y) &lt; 2048
     {
-        path_clear_points(path);
-        mp_grid_path(global.enemy_motion_grid, path, x, y, player_obj.x, player_obj.y, 1);
-        path_set_precision(path,1);
-        path_start(path, runSpd, 0, 1);
+
+        if point_distance(x,y,player_obj.x,player_obj.y) &gt; 64 or collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) != noone
+        {
+            path_clear_points(path);
+            mp_grid_path(global.enemy_motion_grid, path, x, y, player_obj.x, player_obj.y, 1);
+            path_set_precision(path,1);
+            path_start(path, runSpd, 0, 1);
+        }
+        else
+        {
+            path_end();
+        }
     }
     else
     {
-        path_end();
+        move_towards_point(player_obj.x,player_obj.y,runSpd);
     }
 }
 

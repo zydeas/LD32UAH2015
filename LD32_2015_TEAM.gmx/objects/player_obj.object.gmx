@@ -218,6 +218,10 @@ if bbox_bottom &gt; room_height
 gamepad_input(0);
 
 move_axis(xaxis, yaxis, .25 ,4);
+
+
+instance_deactivate_object(wall_obj);
+instance_activate_region(x-2048,y-2048,x+2048,y+2048,true);
 </string>
           </argument>
         </arguments>
