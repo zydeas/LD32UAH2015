@@ -31,8 +31,6 @@ cool_guy_names();
 
 global.time_elapsed = 0;
 global.enemy_motion_grid = mp_grid_create(0, 0, room_width / 32, room_height / 32, 32, 32);
-
-room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -62,6 +60,8 @@ mp_grid_add_instances(global.enemy_motion_grid, solid_obj, true);
 {
     mp_grid_add_instances(global.enemy_motion_grid,enemy_parent_obj,true);
 }*/
+
+instance_destroy();
 </string>
           </argument>
         </arguments>

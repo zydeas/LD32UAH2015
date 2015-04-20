@@ -64,6 +64,7 @@
     <instance objName="wall_obj" x="0" y="288" name="inst_7BA4D46A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall_obj" x="0" y="192" name="inst_7E1CE2F3" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="wall_obj" x="32" y="0" name="inst_E172B723" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="enemy_spawner_obj" x="128" y="96" name="inst_6ABB679F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_building" x="0" y="0" w="32" h="32" xo="32" yo="0" id="10000033" name="inst_08B3E150" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

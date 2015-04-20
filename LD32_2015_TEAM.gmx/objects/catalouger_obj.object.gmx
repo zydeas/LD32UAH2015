@@ -39,16 +39,14 @@ timer = 0;
 roomIndex = 0;
 roomDone = false;
 
-global.building_list = ds_list_create();
-
-load_list = ds_list_create();
+global.building_catalouge_accessors = ds_list_create();
 
 // ADD YOUR ROOMS TO HERE!
 
 // Wolfenhex
 
-ds_list_add(load_list, wolfenhex_test);
-ds_list_add(load_list, wolfenhex_test_2);
+ds_list_add(global.building_catalouge_accessors, wolfenhex_test);
+ds_list_add(global.building_catalouge_accessors, wolfenhex_test_2);
 
 </string>
           </argument>
@@ -78,9 +76,10 @@ ds_list_add(load_list, wolfenhex_test_2);
     {
         case 0:
         {
-            if roomIndex &lt; ds_list_size(load_list)
+            if roomIndex &lt; ds_list_size(global.building_catalouge_accessors)
             {
-                var ri = load_list[|roomIndex];
+                var ri = global.building_catalouge_accessors[|roomIndex];
+
                 if room_exists(ri)
                 {
                     room_goto(ri);
