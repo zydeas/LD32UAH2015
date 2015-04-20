@@ -232,7 +232,7 @@ if wepData != NULL
                     with o
                     {
                         direction = other.weapon_aim;
-                        creator = other.id;
+                        creator =  other.id;
                     }
                 }
                 
