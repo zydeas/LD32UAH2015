@@ -7,11 +7,12 @@ if ds_map_exists(global.building_catalouge,source)
 {
     var building = global.building_catalouge[? source];
     
-    //Add tiles
+    // Add tiles
+    
     if building[? CAT_TILES] != NULL
     {
         var tiles = building[? CAT_TILES];
-        
+
         for(var i=0;i<ds_grid_height(tiles);i++)
         {
             if background_exists(tiles[# CAT_TILE_BACK,i])
@@ -29,7 +30,9 @@ if ds_map_exists(global.building_catalouge,source)
     }
     
     var o;
-    //Add instances
+
+    // Add instances
+
     if building[? CAT_INSTANCES] != NULL
     {
         var ins = building[? CAT_INSTANCES];
@@ -45,5 +48,4 @@ if ds_map_exists(global.building_catalouge,source)
             }
         }
     }
-    
 }
