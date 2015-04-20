@@ -29,14 +29,14 @@
 var time_minutes = abs((global.leaderboard_time / 60) - 0.5); //0.5 subtracted for rounding
 var time_hours = abs((global.leaderboard_time / 3600) - 0.5); // 0.5 subtracted for rounding
 
-var seconds_string = string_format(time_seconds, 2, 2);
-var minutes_string = string_format(time_minutes, 2, 0);
-var hours_string = string_format(time_hours, 2, 0);
+var seconds_string_l = string_format(time_seconds, 2, 2);
+var minutes_string_l = string_format(time_minutes, 2, 0);
+var hours_string_l = string_format(time_hours, 2, 0);
 
 draw_set_color(c_white);
 
 draw_text(x, y, "Best Population: " + string(global.leaderboard_population));
-draw_text(x, y + 16, "Best Time: " + hours_string + ":" + minutes_string + ":" + seconds_string);
+draw_text(x, y + 16, "Best Time: " + hours_string_l + ":" + minutes_string_l + ":" + seconds_string_l);
 
 </string>
           </argument>

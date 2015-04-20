@@ -34,17 +34,19 @@ max_health = enmTable[? ENM_HEALTH];
 current_health = max_health;
 healtick = 0;
 
+//naming conventions
 handle_length = random_range(0, array_length_1d(global.sick_handles));
 first_length = random_range(0, array_length_1d(global.first_names));
 last_length = random_range(0, array_length_1d(global.last_names));
 
+//determines name type
 name_determine = random_range(0,4);
 
+//sets name
 if(name_determine &lt;= 3)
 {
     enemy_name = global.first_names[first_length] + " " + global.last_names[last_length]; 
 }
-
 else
 {
     enemy_name = global.sick_handles[handle_length];
@@ -482,9 +484,13 @@ draw_rectangle(x-16,y-21,x+(16*hpscale),y-26,false);
 draw_set_color(c_red);
 draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
 
+//Draws Enemy Name
 draw_set_color(c_white);
 draw_set_halign(fa_center);
-draw_text(x, y-40, enemy_name);
+draw_set_font(dank_font);
+draw_text(x, y-50, enemy_name);
+//sets to default font
+draw_set_font(-1);
 draw_set_halign(fa_left);
 
 

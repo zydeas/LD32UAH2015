@@ -2,7 +2,7 @@
 
 global.weaponMap = ds_map_create();
 
-var shotgun,singleShot,melee,rocket, machinegun;
+var nuke, shotgun, singleShot, melee, rocket, machinegun;
 
 nuke = ds_map_create();
 mini = ds_map_create();

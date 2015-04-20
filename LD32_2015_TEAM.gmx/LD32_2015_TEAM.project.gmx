@@ -34,12 +34,14 @@
       <sprite>sprites\projectile_spr</sprite>
       <sprite>sprites\rocket_spr</sprite>
     </sprites>
+    <sprite>sprites\heal_beam_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\test_tiles_spr</background>
     <background>background\SCRUBREKT</background>
     <background>background\bg_city_streets</background>
     <background>background\bg_building</background>
+    <background>background\bg_smallbuildingtilesheet</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -55,7 +57,11 @@
     <script>scripts\cool_guy_names.gml</script>
     <script>scripts\room_catalouge_tiles.gml</script>
     <script>scripts\catalouge_build_instances.gml</script>
+    <script>scripts\point_beam_shoot.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\dank_font</font>
+  </fonts>
   <objects name="objects">
     <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
@@ -85,6 +91,7 @@
     <object>objects\ticker</object>
     <object>objects\leaderboard_obj</object>
     <object>objects\restart_button</object>
+    <object>objects\healy_beam</object>
   </objects>
   <rooms name="rooms">
     <rooms name="DO NOT MOVE FROM TOP OF LIST">
@@ -93,6 +100,10 @@
     <rooms name="Buildings">
       <room>rooms\wolfenhex_test</room>
       <room>rooms\wolfenhex_test_2</room>
+      <room>rooms\clark_small_room</room>
+      <room>rooms\clark_long_room</room>
+      <room>rooms\clark_L_room</room>
+      <room>rooms\clark_rool_longtop</room>
     </rooms>
     <rooms name="Game">
       <room>rooms\start_up</room>
