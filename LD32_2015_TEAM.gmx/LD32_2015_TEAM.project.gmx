@@ -41,6 +41,7 @@
     <background>background\SCRUBREKT</background>
     <background>background\bg_city_streets</background>
     <background>background\bg_building</background>
+    <background>background\bg_smallbuildingtilesheet</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -99,6 +100,10 @@
     <rooms name="Buildings">
       <room>rooms\wolfenhex_test</room>
       <room>rooms\wolfenhex_test_2</room>
+      <room>rooms\clark_small_room</room>
+      <room>rooms\clark_long_room</room>
+      <room>rooms\clark_L_room</room>
+      <room>rooms\clark_rool_longtop</room>
     </rooms>
     <rooms name="Game">
       <room>rooms\start_up</room>
