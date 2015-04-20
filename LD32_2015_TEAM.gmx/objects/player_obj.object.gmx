@@ -39,9 +39,12 @@ lose_meter = 0;
 lose_total = 50;
 lose_decrement = 0.01;
 
+beam_cooldown = 0;
+
 physics_move_init();
 globalvar death_count;
 
+global.time_elapsed = 0;
 global.death_count = 0;
 
 xaxis = 0;
@@ -69,14 +72,14 @@ magnitude = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var timer = get_timer();
+            <string>//var timer = global.time_elapsed
 
-if(global.leaderboard_time &lt; timer)
+if(global.leaderboard_time &lt; global.time_elapsed)
 {
-    global.leaderboard_time = timer;
+    global.leaderboard_time = global.time_elapsed;
 }
 
-room_goto_next();
+//room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -113,7 +116,18 @@ keyboard_set_map(ord("D"), vk_right);
 hor = keyboard_check(vk_right)-keyboard_check(vk_left);
 ver = keyboard_check(vk_down)-keyboard_check(vk_up);
 mouse = mouse_check_button(mb_left);
+mousermb = mouse_check_button(mb_right);
 
+//beam cooldown update
+if(beam_cooldown - 1 &lt; 0)
+{
+    beam_cooldown = 0;
+}
+else   
+{
+    beam_cooldown -= 1;
+
+}
 //losing meter handling
 if( lose_meter - lose_decrement &lt; 0)
 {
@@ -178,6 +192,12 @@ if (mouse and range &gt; 0)
     }
 }
 
+//healybeam
+if mousermb &amp;&amp; beam_cooldown == 0
+{
+    //point_beam_shoot(x, y, mouse_x, mouse_y);
+}
+
 if bbox_left &lt; 0 
 {
     do {x+=1} until bbox_left=0;
@@ -222,7 +242,7 @@ move_axis(xaxis, yaxis, .25 ,4);
             <kind>1</kind>
             <string>//death counter in upper-left of screen
 
-global.time_elapsed = get_timer()/1000000;
+global.time_elapsed += delta_time/1000000;
 
 time_seconds = global.time_elapsed % 60;
 time_minutes = abs((global.time_elapsed / 60) - 0.5); //0.5 subtracted for rounding
