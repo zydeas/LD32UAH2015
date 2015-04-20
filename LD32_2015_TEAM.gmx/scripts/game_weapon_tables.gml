@@ -5,6 +5,7 @@ global.weaponMap = ds_map_create();
 var shotgun,singleShot,melee,rocket, machinegun;
 
 nuke = ds_map_create();
+mini = ds_map_create();
 shotgun = ds_map_create();
 singleShot = ds_map_create();
 melee = ds_map_create();
@@ -19,6 +20,13 @@ ds_map_add(nuke, WEPTAG_FIRE_RATE,   1);
 ds_map_add(nuke, WEPTAG_RANGE,   1);
 ds_map_add(nuke, WEPTAG_PROJECTILE,  explosion_obj);
 
+ds_map_add_map(global.weaponMap, WEP_MINI ,mini);
+
+ds_map_add(mini, WEPTAG_SPRITE,      NULL);
+ds_map_add(mini, WEPTAG_TYPE,        WEPTYPE_PROJECTILE );
+ds_map_add(mini, WEPTAG_FIRE_RATE,   0.5);
+ds_map_add(mini, WEPTAG_RANGE,   1);
+ds_map_add(mini, WEPTAG_PROJECTILE,  weapon_minigun_obj);
 
 ds_map_add_map(global.weaponMap, WEP_SHOTGUN ,shotgun);
 
