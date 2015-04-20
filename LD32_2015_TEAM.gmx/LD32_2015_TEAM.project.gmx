@@ -4,7 +4,17 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\bg_clap_snd</sound>
+    <sound>sound\bg_kick_snd</sound>
+    <sound>sound\airhorn_snd</sound>
+    <sound>sound\owlchirp_snd</sound>
+    <sound>sound\eagle_snd</sound>
+    <sound>sound\chirp_snd</sound>
+    <sound>sound\jackdaw_snd</sound>
+    <sound>sound\rooster_snd</sound>
+    <sound>sound\loon_snd</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_brick</sprite>
     <sprite>sprites\spawner_mask_spr</sprite>
@@ -33,6 +43,7 @@
       <sprite>sprites\knife_hitbox_spr</sprite>
       <sprite>sprites\projectile_spr</sprite>
       <sprite>sprites\rocket_spr</sprite>
+      <sprite>sprites\weapon_airhorn_spr</sprite>
     </sprites>
     <sprite>sprites\heal_beam_spr</sprite>
   </sprites>
@@ -80,6 +91,7 @@
       <object>objects\explosion_obj</object>
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
+      <object>objects\weapon_airhorn_obj</object>
       <object>objects\mini_gun_proj_obj</object>
       <object>objects\weapon_machinegun_obj</object>
       <object>objects\weapon_minigun_obj</object>
@@ -90,6 +102,7 @@
     <object>objects\room_generator</object>
     <object>objects\ticker</object>
     <object>objects\leaderboard_obj</object>
+    <object>objects\sound_spawner_obj</object>
     <object>objects\restart_button</object>
     <object>objects\healy_beam</object>
   </objects>
@@ -117,7 +130,8 @@
     </rooms>
     <room>rooms\level_room</room>
   </rooms>
-  <constants number="43">
+  <constants number="44">
+    <constant name="NULL">-1</constant>
     <constant name="CAT_INS_META">5</constant>
     <constant name="CAT_INS_OBJID">0</constant>
     <constant name="CAT_INS_SCALEX">3</constant>
@@ -146,7 +160,6 @@
     <constant name="ENMTYPE_ROBIN">3</constant>
     <constant name="ENMTYPE_VULTURE">4</constant>
     <constant name="ENMTYPE_AIRHORN">5</constant>
-    <constant name="NULL">-1</constant>
     <constant name="WEP_MINI">6</constant>
     <constant name="WEP_MACHINEGUN">5</constant>
     <constant name="WEP_MELEE">3</constant>
@@ -157,6 +170,7 @@
     <constant name="WEPTAG_FIRE_RATE">3</constant>
     <constant name="WEPTAG_PROJECTILE">1</constant>
     <constant name="WEPTAG_RANGE">4</constant>
+    <constant name="WEP_AIRHORN">7</constant>
     <constant name="WEPTAG_SPRITE">0</constant>
     <constant name="WEPTAG_TYPE">2</constant>
     <constant name="WEPTYPE_MELEE">1</constant>

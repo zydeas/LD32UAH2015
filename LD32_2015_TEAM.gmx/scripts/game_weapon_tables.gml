@@ -2,7 +2,7 @@
 
 global.weaponMap = ds_map_create();
 
-var nuke, shotgun, singleShot, melee, rocket, machinegun;
+var nuke, shotgun,singleShot,melee,rocket, machinegun, airhorn;
 
 nuke = ds_map_create();
 mini = ds_map_create();
@@ -11,6 +11,7 @@ singleShot = ds_map_create();
 melee = ds_map_create();
 rocket = ds_map_create();
 machinegun  = ds_map_create();
+airhorn = ds_map_create();
 
 ds_map_add_map(global.weaponMap, WEP_NUKE ,nuke);
 
@@ -63,3 +64,10 @@ ds_map_add(rocket, WEPTAG_SPRITE,      NULL);
 ds_map_add(rocket, WEPTAG_TYPE,        WEPTYPE_PROJECTILE);
 ds_map_add(rocket, WEPTAG_FIRE_RATE,   100);
 ds_map_add(rocket, WEPTAG_PROJECTILE,  rocket_obj);
+
+ds_map_add_map(global.weaponMap, WEP_AIRHORN, airhorn);
+
+ds_map_add(airhorn, WEPTAG_SPRITE, weapon_airhorn_spr);
+ds_map_add(airhorn, WEPTAG_TYPE, WEPTYPE_PROJECTILE);
+ds_map_add(airhorn, WEPTAG_FIRE_RATE, 100);
+ds_map_add(airhorn, WEPTAG_PROJECTILE, weapon_airhorn_obj);
