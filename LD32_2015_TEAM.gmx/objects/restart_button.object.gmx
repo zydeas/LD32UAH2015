@@ -95,6 +95,8 @@ room_goto_previous();
             <string>draw_set_color(c_white);
 draw_rectangle(x, y, x + width, y + height, 0);
 
+draw_set_font(dank_font);
+
 draw_set_color(c_black);
 draw_text(x + 8, y + 8, "Try Again");
 </string>

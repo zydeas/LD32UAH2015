@@ -166,7 +166,7 @@ ds_list_add(global.building_catalouge_accessors, wolfenhex_test_2);
 {
     draw_set_color(c_black);
     draw_rectangle(0,0,window_get_width(),window_get_height(),0);
-
+    draw_set_font(dank_font);
     draw_set_color(c_white);
     draw_text(16,16, "Loading...");
 }

@@ -286,7 +286,7 @@ switch wepData[? WEPTAG_TYPE ]
 
         if fireTimer &lt;= 0
         {
-            if object_exists(wepData[? WEPTAG_PROJECTILE ])
+            if object_exists(wepData[? WEPTAG_PROJECTILE ]) and collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) = noone
             {
                 var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
                 

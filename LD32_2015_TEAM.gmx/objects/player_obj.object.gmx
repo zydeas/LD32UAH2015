@@ -260,6 +260,8 @@ enemies_alive_string = string(enemies_alive);
 
 time_display = "Time Elapsed: " + hours_string + ":" + minutes_string + ":" + seconds_string; 
 
+draw_set_font(dank_font);
+
 draw_text(32, 16, time_display);
 draw_text(32, 32, "Death Count: " + string(global.death_count));
 draw_text(32, 48, "Enemies alive: " + enemies_alive_string);
