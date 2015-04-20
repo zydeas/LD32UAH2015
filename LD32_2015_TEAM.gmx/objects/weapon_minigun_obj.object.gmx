@@ -82,20 +82,27 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var angleVar = random_range(-3.5,3.5);
+            <string>if !instance_exists(player_obj)
+{
+    exit;
+}
+
+var angleVar = random_range(-3.5,3.5);
+
 var dir = point_direction(x,y,player_obj.x,player_obj.y);
-    var o = instance_create(x, y, mini_gun_proj_obj);
+var o = instance_create(x, y, mini_gun_proj_obj);
     
-    with o
-    {
-        direction = dir + angleVar;
-    }
+with o
+{
+    direction = dir + angleVar;
+}
+
 tick -= 1;
 alarm[0] = 1;
 
 if tick &lt;= 0 
 {
-instance_destroy();
+    instance_destroy();
 }
 </string>
           </argument>
