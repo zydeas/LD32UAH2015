@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var angleVar = 10;
+            <string>creator = NULL;
+var angleVar = 10;
 var angle = -angleVar;
-var dir = direction;
+var dir = point_direction(x,y,player_obj.x,player_obj.y);
 repeat(5)
 {
     var o = instance_create(x, y, projectile_obj);

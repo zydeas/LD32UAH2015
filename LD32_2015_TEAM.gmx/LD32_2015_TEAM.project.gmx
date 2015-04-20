@@ -77,16 +77,21 @@
       <object>objects\explosion_obj</object>
       <object>objects\knife_hitbox_obj</object>
       <object>objects\projectile_obj</object>
+      <object>objects\mini_gun_proj_obj</object>
       <object>objects\weapon_machinegun_obj</object>
+      <object>objects\weapon_minigun_obj</object>
       <object>objects\weapon_shotgun_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>
     <object>objects\room_generator</object>
     <object>objects\ticker</object>
+    <object>objects\leaderboard_obj</object>
+    <object>objects\restart_button</object>
     <object>objects\healy_beam</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\start_up</room>
     <room>rooms\level_room</room>
     <room>rooms\room_lose</room>
     <room>rooms\catalouge_start_room</room>
@@ -94,49 +99,50 @@
     <room>rooms\test_build_room</room>
     <room>rooms\random_test_room</room>
   </rooms>
-  <constants number="42">
-    <constant name="ENM_SPEED">0</constant>
-    <constant name="ENM_SPRITE">1</constant>
+  <constants number="43">
+    <constant name="CAT_INS_META">5</constant>
+    <constant name="CAT_INS_OBJID">0</constant>
+    <constant name="CAT_INS_SCALEX">3</constant>
+    <constant name="CAT_INS_SCALEY">4</constant>
+    <constant name="CAT_INS_X">1</constant>
+    <constant name="CAT_INS_Y">2</constant>
+    <constant name="CAT_INSTANCES">0</constant>
+    <constant name="CAT_ROOM_HEIGHT">3</constant>
+    <constant name="CAT_ROOM_WIDTH">2</constant>
+    <constant name="CAT_TILE_BACK">0</constant>
+    <constant name="CAT_TILE_DEPTH">7</constant>
+    <constant name="CAT_TILE_HEIGHT">6</constant>
+    <constant name="CAT_TILE_LEFT">3</constant>
+    <constant name="CAT_TILE_TOP">4</constant>
+    <constant name="CAT_TILE_WIDTH">5</constant>
+    <constant name="CAT_TILE_X">1</constant>
+    <constant name="CAT_TILE_Y">2</constant>
+    <constant name="CAT_TILES">1</constant>
     <constant name="ENM_ARMOR">2</constant>
     <constant name="ENM_HEALTH">3</constant>
-    <constant name="ENMTYPE_OWL">0</constant>
+    <constant name="ENM_SPEED">0</constant>
+    <constant name="ENM_SPRITE">1</constant>
     <constant name="ENMTYPE_CROW">1</constant>
+    <constant name="ENMTYPE_OWL">0</constant>
     <constant name="ENMTYPE_PIDGEON">2</constant>
     <constant name="ENMTYPE_ROBIN">3</constant>
     <constant name="ENMTYPE_VULTURE">4</constant>
     <constant name="ENMTYPE_AIRHORN">5</constant>
+    <constant name="NULL">-1</constant>
+    <constant name="WEP_MINI">6</constant>
+    <constant name="WEP_MACHINEGUN">5</constant>
+    <constant name="WEP_MELEE">3</constant>
+    <constant name="WEP_NUKE">4</constant>
+    <constant name="WEP_ROCKET">2</constant>
     <constant name="WEP_SHOTGUN">0</constant>
     <constant name="WEP_SINGLESHOT">1</constant>
-    <constant name="WEP_ROCKET">2</constant>
-    <constant name="WEP_NUKE">4</constant>
-    <constant name="WEP_MELEE">3</constant>
-    <constant name="WEP_MACHINEGUN">5</constant>
-    <constant name="WEPTAG_SPRITE">0</constant>
-    <constant name="WEPTAG_PROJECTILE">1</constant>
-    <constant name="WEPTAG_TYPE">2</constant>
     <constant name="WEPTAG_FIRE_RATE">3</constant>
+    <constant name="WEPTAG_PROJECTILE">1</constant>
     <constant name="WEPTAG_RANGE">4</constant>
-    <constant name="WEPTYPE_PROJECTILE">0</constant>
+    <constant name="WEPTAG_SPRITE">0</constant>
+    <constant name="WEPTAG_TYPE">2</constant>
     <constant name="WEPTYPE_MELEE">1</constant>
-    <constant name="CAT_INS_OBJID">0</constant>
-    <constant name="CAT_INS_X">1</constant>
-    <constant name="CAT_INS_Y">2</constant>
-    <constant name="CAT_INS_SCALEX">3</constant>
-    <constant name="CAT_INS_SCALEY">4</constant>
-    <constant name="CAT_INS_META">5</constant>
-    <constant name="CAT_TILE_BACK">0</constant>
-    <constant name="CAT_TILE_X">1</constant>
-    <constant name="CAT_TILE_Y">2</constant>
-    <constant name="CAT_TILE_LEFT">3</constant>
-    <constant name="CAT_TILE_TOP">4</constant>
-    <constant name="CAT_TILE_WIDTH">5</constant>
-    <constant name="CAT_TILE_HEIGHT">6</constant>
-    <constant name="CAT_TILE_DEPTH">7</constant>
-    <constant name="CAT_INSTANCES">0</constant>
-    <constant name="CAT_TILES">1</constant>
-    <constant name="CAT_ROOM_WIDTH">2</constant>
-    <constant name="CAT_ROOM_HEIGHT">3</constant>
-    <constant name="NULL">-1</constant>
+    <constant name="WEPTYPE_PROJECTILE">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
