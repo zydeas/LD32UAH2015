@@ -98,7 +98,6 @@
       <object>objects\weapon_shotgun_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
-    <object>objects\losing_text</object>
     <object>objects\room_generator</object>
     <object>objects\ticker</object>
     <object>objects\leaderboard_obj</object>

@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var time_seconds = global.leaderboard_time / room_speed;
+            <string>var time_seconds = global.my_time / room_speed;
 var time_minutes = floor(time_seconds / 60);
 
-var time_display = "";
+var time_display = "Time: ";
 
 if(time_minutes &gt; 0)
 {
@@ -49,9 +49,35 @@ else
 
 draw_set_color(c_white);
 
-draw_text(x, y, "Best Population: " + string(global.leaderboard_population));
-draw_text(x, y + 16, "Best Time: " + time_display);
+draw_text(32, y, "Population: " + string(global.my_population));
+draw_text(32, y + 16, time_display);
 
+//
+
+time_seconds = global.leaderboard_time / room_speed;
+time_minutes = floor(time_seconds / 60);
+
+time_display = "";
+
+if(time_minutes &gt; 0)
+{
+    time_seconds -= time_minutes * 60;
+    time_display += string(time_minutes) + ":";
+    
+    if(time_seconds &lt; 10)
+    {
+        time_display += "0";
+    }
+    
+    time_display += string_format(time_seconds, 2, 2);
+}
+else
+{
+    time_display += string(time_seconds);
+}
+
+draw_text(x, y + 48, "Best Population: " + string(global.leaderboard_population));
+draw_text(x, y + 64, "Best Time: " + time_display);
 </string>
           </argument>
         </arguments>

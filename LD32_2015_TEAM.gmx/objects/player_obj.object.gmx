@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>steps = 0;
+            <string>global.my_deaths = 0;
+global.my_population = 0;
+global.my_time = 0;
+
+steps = 0;
 
 dx = 0;
 dy = 0;
@@ -44,10 +48,6 @@ lose_decrement = 0.01;
 beam_cooldown = 0;
 
 physics_move_init();
-globalvar death_count;
-
-global.time_elapsed = 0;
-global.death_count = 0;
 
 xaxis = 0;
 yaxis = 0;
@@ -74,7 +74,9 @@ magnitude = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.leaderboard_time &lt; steps)
+            <string>global.my_time = steps;
+
+if(global.leaderboard_time &lt; steps)
 {
     global.leaderboard_time = steps;
 }
@@ -102,12 +104,17 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>steps++;
-
-if(global.leaderboard_population &lt; enemies_alive)
+            <string>if(global.leaderboard_population &lt; enemies_alive)
 {
     global.leaderboard_population = enemies_alive;
 }
+
+if(global.my_population &lt; enemies_alive)
+{
+    global.my_population = enemies_alive;
+}
+
+steps++;
 
 var hor,ver, healbox;
 keyboard_set_map(ord("W"), vk_up);
@@ -272,7 +279,7 @@ draw_set_color(c_white);
 
 draw_text(32, 16, time_display);
 
-draw_text(32, 32, "Deaths: " + string(global.death_count));
+draw_text(32, 32, "Deaths: " + string(global.my_deaths));
 draw_text(32, 48, "Population: " + string(enemies_alive));
 
 //Draw a basic bitch meter
