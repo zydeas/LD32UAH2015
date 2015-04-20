@@ -76,7 +76,7 @@ if(global.leaderboard_time &lt; timer)
     global.leaderboard_time = timer;
 }
 
-room_goto_next();
+//room_goto_next();
 </string>
           </argument>
         </arguments>

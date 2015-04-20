@@ -99,12 +99,12 @@
       <room>rooms\generated_room</room>
       <room>rooms\room_lose</room>
     </rooms>
-    <room>rooms\level_room</room>
     <rooms name="Tests">
       <room>rooms\test_build_room</room>
       <room>rooms\test_building_room</room>
       <room>rooms\random_test_room</room>
     </rooms>
+    <room>rooms\level_room</room>
   </rooms>
   <constants number="43">
     <constant name="CAT_INS_META">5</constant>
