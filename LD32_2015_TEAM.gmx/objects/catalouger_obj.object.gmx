@@ -55,6 +55,9 @@ ds_list_add(global.building_catalouge_accessors, clark_rool_longtop);
 ds_list_add(global.building_catalouge_accessors, wolfenhex_test);
 ds_list_add(global.building_catalouge_accessors, wolfenhex_test_2);
 
+//Christopher Kerl
+ds_list_add(global.building_catalouge_accessors, cl_room1_room);
+ds_list_add(global.building_catalouge_accessors, cl_room2_room);
 </string>
           </argument>
         </arguments>
