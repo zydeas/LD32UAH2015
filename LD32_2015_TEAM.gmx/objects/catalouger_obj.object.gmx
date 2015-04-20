@@ -43,6 +43,13 @@ global.building_catalouge_accessors = ds_list_create();
 
 // ADD YOUR ROOMS TO HERE!
 
+// Joytis
+
+ds_list_add(global.building_catalouge_accessors, clark_small_room);
+ds_list_add(global.building_catalouge_accessors, clark_long_room);
+ds_list_add(global.building_catalouge_accessors, clark_L_room);
+ds_list_add(global.building_catalouge_accessors, clark_rool_longtop);
+
 // Wolfenhex
 
 ds_list_add(global.building_catalouge_accessors, wolfenhex_test);
