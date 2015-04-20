@@ -203,77 +203,16 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(player_obj)
+            <string>if !instance_exists(player_obj)
 {
-    weapon_aim = point_direction(x, y, player_obj.x, player_obj.y);
+    exit;
 }
 
-weapon_x = x+lengthdir_x(25, weapon_aim);
-weapon_y = y+lengthdir_y(25, weapon_aim);
-
-if(weapon_aim &gt; 90 &amp;&amp; weapon_aim &lt;=270)
-{
-    weapon_scale = -1;
-}
-else
-{
-    weapon_scale = 1;
-}
-
-var wepData = weapon_data(weapon);
-
-if wepData != NULL
-{
-    switch wepData[? WEPTAG_TYPE ]
-    {
-        case WEPTYPE_PROJECTILE:
-            if fireTimer &lt;= 0
-            {
-                if object_exists(wepData[? WEPTAG_PROJECTILE ])
-                {
-                    var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
-                    
-                    with o
-                    {
-                        direction = other.weapon_aim;
-                        creator =  other.id;
-                    }
-                }
-                
-                fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
-            }
-            else
-            {
-                fireTimer -= 1;
-            }
-        break;
-        
-        case WEPTYPE_MELEE:
-            if instance_exists(player_obj)
-            {
-                var dist = distance_to_object(player_obj);
-                if (fireTimer &lt;= 0 and (dist &lt;= (wepData[? WEPTAG_RANGE ] * 50)))  
-                {
-
-                    var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);    
-                    
-                    with o
-                        {
-                            direction = other.weapon_aim;
-                            creator = other.id;
-                        }
-                    fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
-                }else
-                    fireTimer -= 1;
-            }
-                break;
-            }
-            
-}
-
-if(current_health == 0)
+if(current_health &lt;= 0)
 {
     global.death_count++;
+    instance_destroy();
+    exit;
 }
 
 //If we are colliding with another enemy, we need to move away from them.
@@ -293,11 +232,10 @@ if place_meeting(x,y,enemy_parent_obj)
     py = lengthdir_y(runSpd,dir);
     physics_move_collide(px,py,solid_obj,NULL);
 }
-else if instance_exists(player_obj)
+else
 {
-    if point_distance(x,y,player_obj.x,player_obj.y) &lt; 2048
+    if point_distance(x,y,player_obj.x,player_obj.y) &lt; 1600
     {
-
         if point_distance(x,y,player_obj.x,player_obj.y) &gt; 64 or collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) != noone
         {
             path_clear_points(path);
@@ -316,24 +254,81 @@ else if instance_exists(player_obj)
     }
 }
 
-if(current_health &lt;= 0)
-{
-    instance_destroy();
-    
-}
+weapon_aim = point_direction(x, y, player_obj.x, player_obj.y);
 
-//Old Healthbar
-/*if(current_health &gt;=0)
+weapon_x = x+lengthdir_x(25, weapon_aim);
+weapon_y = y+lengthdir_y(25, weapon_aim);
+
+if(weapon_aim &gt; 90 &amp;&amp; weapon_aim &lt;=270)
 {
-    healthbar_id.image_xscale = current_health / max_health;
+    weapon_scale = -1;
 }
 else
 {
-    healthbar_id.image_xscale = 0;
+    weapon_scale = 1;
 }
 
-healthbar_id.x = x - 4;
-healthbar_id.y = y - 20;*/
+if point_distance(x,y,player_obj.x,player_obj.y) &gt; 800
+{
+    exit;
+}
+
+var wepData = weapon_data(weapon);
+
+if wepData == NULL
+{
+    exit;
+}
+
+switch wepData[? WEPTAG_TYPE ]
+{
+    case WEPTYPE_PROJECTILE:
+
+        if fireTimer &lt;= 0
+        {
+            if object_exists(wepData[? WEPTAG_PROJECTILE ])
+            {
+                var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
+                
+                with o
+                {
+                    direction = other.weapon_aim;
+                    creator =  other.id;
+                }
+            }
+            
+            fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
+        }
+        else
+        {
+            fireTimer -= 1;
+        }
+    
+        break;
+    
+    case WEPTYPE_MELEE:
+
+        var dist = distance_to_object(player_obj);
+
+        if (fireTimer &lt;= 0 and (dist &lt;= (wepData[? WEPTAG_RANGE ] * 50)))  
+        {
+            var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);    
+            
+            with o
+            {
+                direction = other.weapon_aim;
+                creator = other.id;
+            }
+
+            fireTimer = room_speed*wepData[? WEPTAG_FIRE_RATE ];
+        }
+        else
+        {
+            fireTimer -= 1;
+        }
+
+        break;
+}
 </string>
           </argument>
         </arguments>
