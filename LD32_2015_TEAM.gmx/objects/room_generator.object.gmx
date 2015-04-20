@@ -64,6 +64,7 @@ for(var X = 0; X &lt; Width; X++)
             <string>instance_create(100, 100, player_obj);
 
 instance_create(0, 0, camera_obj);
+instance_create(0, 0, manager_obj);
 instance_create(0, 0, ticker);
 </string>
           </argument>
@@ -93,7 +94,9 @@ instance_create(0, 0, ticker);
     exit;
 }
 
-var Room = wolfenhex_test; // NEED A WAY TO RANDOMIZE WHAT ROOM TO SELECT!
+var Index = irandom(ds_list_size(global.building_catalouge_accessors) - 1);
+
+var Room = global.building_catalouge_accessors[| Index];
 
 var Spawn = global.building_catalouge[? Room];
 

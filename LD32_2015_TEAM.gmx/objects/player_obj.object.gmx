@@ -108,9 +108,13 @@ if(global.leaderboard_time &lt; global.time_elapsed)
 }
 
 var hor,ver, healbox;
+keyboard_set_map(ord("W"), vk_up);
+keyboard_set_map(ord("A"), vk_left);
+keyboard_set_map(ord("S"), vk_down);
+keyboard_set_map(ord("D"), vk_right);
 
-hor = keyboard_check(ord("D"))-keyboard_check(ord("A"));
-ver = keyboard_check(ord("S"))-keyboard_check(ord("W"));
+hor = keyboard_check(vk_right)-keyboard_check(vk_left);
+ver = keyboard_check(vk_down)-keyboard_check(vk_up);
 mouse = mouse_check_button(mb_left);
 mousermb = mouse_check_button(mb_right);
 
