@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,20 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>creator = NULL;
-var angleVar = 10;
-var angle = -angleVar;
-var dir = point_direction(x,y,player_obj.x,player_obj.y);
-repeat(5)
-{
-    var o = instance_create(x, y, projectile_obj);
-    
-    with o
-    {
-        direction = dir + angle;
-        angle += angleVar;
-    }
-}
+            <string>var time_seconds = global.leaderboard_time % 60;
+var time_minutes = abs((global.leaderboard_time / 60) - 0.5); //0.5 subtracted for rounding
+var time_hours = abs((global.leaderboard_time / 3600) - 0.5); // 0.5 subtracted for rounding
+
+var seconds_string = string_format(time_seconds, 2, 2);
+var minutes_string = string_format(time_minutes, 2, 0);
+var hours_string = string_format(time_hours, 2, 0);
+
+draw_set_color(c_white);
+
+draw_text(x, y, "Best Population: " + string(global.leaderboard_population));
+draw_text(x, y + 16, "Best Time: " + hours_string + ":" + minutes_string + ":" + seconds_string);
 
 </string>
           </argument>

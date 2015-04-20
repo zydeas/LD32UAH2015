@@ -127,6 +127,10 @@
     <instance objName="enemy_spawner_obj" x="320" y="864" name="inst_09B31AC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_spawner_obj" x="608" y="128" name="inst_98F81820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ticker" x="96" y="32" name="inst_4A6EEBF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall_obj" x="0" y="960" name="inst_E192700F" locked="0" code="" scaleX="40" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="wall_obj" x="-32" y="0" name="inst_C6519DF9" locked="0" code="" scaleX="1" scaleY="31" colour="4294967295" rotation="0"/>
+    <instance objName="wall_obj" x="1280" y="0" name="inst_29FACACB" locked="0" code="" scaleX="1" scaleY="31" colour="4294967295" rotation="0"/>
+    <instance objName="wall_obj" x="-32" y="-32" name="inst_05D96C7C" locked="0" code="" scaleX="42" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
