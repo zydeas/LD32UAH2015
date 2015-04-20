@@ -35,6 +35,7 @@ hours_string = string_format(time_hours, 2, 0);
 
 time_display = "Your Time: " + hours_string + ":" + minutes_string + ":" + seconds_string; 
 
+draw_set_font(dank_font);
 draw_set_color(c_white);
 draw_text(x, y, time_display);
 </string>

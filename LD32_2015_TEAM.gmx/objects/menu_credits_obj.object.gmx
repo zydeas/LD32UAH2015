@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="64">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,62 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var time_seconds = global.my_time / room_speed;
-var time_minutes = floor(time_seconds / 60);
-
-var time_display = "Time: ";
-
-draw_set_halign(fa_left);
+            <string>credits = "Programming: Jesse W. Schirmer, Charlotte M. Ellett, Stephanie Clark, Ryan Kline, Clark Chambers, C.L Kerl #Art: Chris McClellan, Jess Baiter Zack Maresh, Justin Keeton, AJ Huey, Leon Kennedy";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-
-if(time_minutes &gt; 0)
-{
-    time_seconds -= time_minutes * 60;
-    time_display += string(time_minutes) + ":";
-    
-    if(time_seconds &lt; 10)
-    {
-        time_display += "0";
-    }
-    
-    time_display += string_format(time_seconds, 2, 2);
-}
-else
-{
-    time_display += string(time_seconds);
-}
 
 draw_set_color(c_white);
 
-draw_text(32, y, "Population: " + string(global.my_population));
-draw_text(32, y + 16, time_display);
-
-//
-
-time_seconds = global.leaderboard_time / room_speed;
-time_minutes = floor(time_seconds / 60);
-
-time_display = "";
-
-if(time_minutes &gt; 0)
-{
-    time_seconds -= time_minutes * 60;
-    time_display += string(time_minutes) + ":";
-    
-    if(time_seconds &lt; 10)
-    {
-        time_display += "0";
-    }
-    
-    time_display += string_format(time_seconds, 2, 2);
-}
-else
-{
-    time_display += string(time_seconds);
-}
-
-draw_text(x, y + 48, "Best Population: " + string(global.leaderboard_population));
-draw_text(x, y + 64, "Best Time: " + time_display);
+draw_set_halign(fa_center);
+draw_text_ext(x,y,credits,-1,room_width);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

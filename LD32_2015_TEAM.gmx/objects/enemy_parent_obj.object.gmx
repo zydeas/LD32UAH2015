@@ -285,7 +285,7 @@ switch wepData[? WEPTAG_TYPE ]
 
         if fireTimer &lt;= 0
         {
-            if object_exists(wepData[? WEPTAG_PROJECTILE ])
+            if object_exists(wepData[? WEPTAG_PROJECTILE ]) and collision_line(x,y,player_obj.x,player_obj.y,solid_obj,true,true) = noone
             {
                 var o = instance_create(weapon_x,weapon_y,wepData[? WEPTAG_PROJECTILE ]);
                 
@@ -376,7 +376,7 @@ if(other == NULL)
 
 killer = other.creator;
 
-if(is_undefined(other.creator))
+if(!instance_exists(other.creator))
 {
     exit;
 }
@@ -474,7 +474,12 @@ id.killcount++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord("P"))
+            <string>if point_distance(x,y,view_xview[0]+320,view_yview[0]+240) &gt; 1024
+{
+    exit;
+}
+
+if keyboard_check(ord("P"))
 {
     draw_set_alpha(0.25);
     draw_path(path,0,0,true);
@@ -491,7 +496,6 @@ draw_rectangle(x-16,y-21,x+(16*hpscale),y-26, true);
 //Draws Enemy Name
 draw_set_color(c_white);
 draw_set_halign(fa_center);
-draw_set_font(dank_font);
 draw_text(x, y-50, enemy_name);
 //sets to default font
 draw_set_font(-1);

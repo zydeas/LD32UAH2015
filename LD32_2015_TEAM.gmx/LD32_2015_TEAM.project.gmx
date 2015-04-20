@@ -46,6 +46,8 @@
       <sprite>sprites\weapon_airhorn_spr</sprite>
     </sprites>
     <sprite>sprites\heal_beam_spr</sprite>
+    <sprite>sprites\menu_button_spr</sprite>
+    <sprite>sprites\transparent</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\test_tiles_spr</background>
@@ -70,9 +72,7 @@
     <script>scripts\catalouge_build_instances.gml</script>
     <script>scripts\point_beam_shoot.gml</script>
   </scripts>
-  <fonts name="fonts">
-    <font>fonts\dank_font</font>
-  </fonts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\manager_obj</object>
     <object>objects\player_obj</object>
@@ -104,6 +104,8 @@
     <object>objects\sound_spawner_obj</object>
     <object>objects\restart_button</object>
     <object>objects\healy_beam</object>
+    <object>objects\menu_button_start_obj</object>
+    <object>objects\menu_credits_obj</object>
   </objects>
   <rooms name="rooms">
     <rooms name="DO NOT MOVE FROM TOP OF LIST">
@@ -119,6 +121,7 @@
     </rooms>
     <rooms name="Game">
       <room>rooms\start_up</room>
+      <room>rooms\menu_room</room>
       <room>rooms\generated_room</room>
       <room>rooms\game_over</room>
     </rooms>

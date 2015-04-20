@@ -253,7 +253,10 @@ instance_activate_region(x-2048,y-2048,x+2048,y+2048,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var time_seconds = steps / room_speed;
+            <string>draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
+var time_seconds = steps / room_speed;
 var time_minutes = floor(time_seconds / 60);
 
 var time_display = "Time: ";

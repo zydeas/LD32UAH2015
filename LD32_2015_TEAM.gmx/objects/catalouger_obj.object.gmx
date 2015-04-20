@@ -162,11 +162,13 @@ ds_list_add(global.building_catalouge_accessors, wolfenhex_test_2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !loaded
+            <string>draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+
+if !loaded
 {
     draw_set_color(c_black);
     draw_rectangle(0,0,window_get_width(),window_get_height(),0);
-
     draw_set_color(c_white);
     draw_text(16,16, "Loading...");
 }
