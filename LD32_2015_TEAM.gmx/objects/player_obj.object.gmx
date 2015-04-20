@@ -79,7 +79,7 @@ if(global.leaderboard_time &lt; global.time_elapsed)
     global.leaderboard_time = global.time_elapsed;
 }
 
-//room_goto_next();
+room_goto_next();
 </string>
           </argument>
         </arguments>
