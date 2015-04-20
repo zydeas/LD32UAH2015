@@ -56,7 +56,7 @@ global.enemy_motion_grid = mp_grid_create(0, 0, room_width / 32, room_height / 3
           </argument>
           <argument>
             <kind>3</kind>
-            <string>0</string>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
