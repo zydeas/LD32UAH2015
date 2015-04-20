@@ -117,6 +117,12 @@
       <room>rooms\clark_long_room</room>
       <room>rooms\clark_L_room</room>
       <room>rooms\clark_rool_longtop</room>
+      <room>rooms\clark_fountain</room>
+      <room>rooms\clark_dank_B_</room>
+      <room>rooms\clark_wall</room>
+      <room>rooms\clark_squiggle_room</room>
+      <room>rooms\clark_doritoes_stash</room>
+      <room>rooms\clark_doritoes</room>
     </rooms>
     <rooms name="Game">
       <room>rooms\start_up</room>
