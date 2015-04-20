@@ -33,9 +33,10 @@ seconds_string = string_format(time_seconds, 2, 2);
 minutes_string = string_format(time_minutes, 2, 0);
 hours_string = string_format(time_hours, 2, 0);
 
-time_display = "Time Elapsed: " + hours_string + ":" + minutes_string + ":" + seconds_string; 
+time_display = "Your Time: " + hours_string + ":" + minutes_string + ":" + seconds_string; 
 
-draw_text(32, 16, time_display);
+draw_set_color(c_white);
+draw_text(x, y, time_display);
 </string>
           </argument>
         </arguments>

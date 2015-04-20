@@ -79,8 +79,11 @@
     <object>objects\losing_text</object>
     <object>objects\room_generator</object>
     <object>objects\ticker</object>
+    <object>objects\leaderboard_obj</object>
+    <object>objects\restart_button</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\start_up</room>
     <room>rooms\level_room</room>
     <room>rooms\room_lose</room>
     <room>rooms\catalouge_start_room</room>
