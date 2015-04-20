@@ -61,11 +61,24 @@ for(var X = 0; X &lt; Width; X++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(100, 100, player_obj);
-
-instance_create(0, 0, camera_obj);
+            <string>instance_create(0, 0, camera_obj);
 instance_create(0, 0, manager_obj);
 instance_create(0, 0, ticker);
+
+while(true)
+{
+    var X = irandom(room_width);
+    var Y = irandom(room_height);
+    
+    if(!Free[X &gt;&gt; Grid, Y &gt;&gt; Grid])
+    {
+        continue;
+    }
+    
+    instance_create(X, Y, player_obj);
+    
+    break;
+}
 </string>
           </argument>
         </arguments>
