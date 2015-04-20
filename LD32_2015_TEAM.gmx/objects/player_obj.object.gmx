@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dx = 0;
+            <string>steps = 0;
+
+dx = 0;
 dy = 0;
 maxRange = 200;
 range = 0;
@@ -72,11 +74,9 @@ magnitude = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//var timer = global.time_elapsed
-
-if(global.leaderboard_time &lt; global.time_elapsed)
+            <string>if(global.leaderboard_time &lt; steps)
 {
-    global.leaderboard_time = global.time_elapsed;
+    global.leaderboard_time = steps;
 }
 
 room_goto_next();
@@ -102,7 +102,9 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.leaderboard_population &lt; enemies_alive)
+            <string>steps++;
+
+if(global.leaderboard_population &lt; enemies_alive)
 {
     global.leaderboard_population = enemies_alive;
 }
@@ -244,26 +246,34 @@ instance_activate_region(x-2048,y-2048,x+2048,y+2048,true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//death counter in upper-left of screen
+            <string>var time_seconds = steps / room_speed;
+var time_minutes = floor(time_seconds / 60);
 
-global.time_elapsed += delta_time/1000000;
+var time_display = "Time: ";
 
-time_seconds = global.time_elapsed % 60;
-time_minutes = abs((global.time_elapsed / 60) - 0.5); //0.5 subtracted for rounding
-time_hours = abs((global.time_elapsed / 3600) - 0.5); // 0.5 subtracted for rounding
+if(time_minutes &gt; 0)
+{
+    time_seconds -= time_minutes * 60;
+    time_display += string(time_minutes) + ":";
+    
+    if(time_seconds &lt; 10)
+    {
+        time_display += "0";
+    }
+    
+    time_display += string_format(time_seconds, 2, 2);
+}
+else
+{
+    time_display += string(time_seconds);
+}
 
-seconds_string = string_format(time_seconds, 2, 2);
-minutes_string = string_format(time_minutes, 2, 0);
-hours_string = string_format(time_hours, 2, 0);
-
-enemies_alive_string = string(enemies_alive);
-
-time_display = "Time Elapsed: " + hours_string + ":" + minutes_string + ":" + seconds_string; 
+draw_set_color(c_white);
 
 draw_text(32, 16, time_display);
-draw_text(32, 32, "Death Count: " + string(global.death_count));
-draw_text(32, 48, "Enemies alive: " + enemies_alive_string);
 
+draw_text(32, 32, "Deaths: " + string(global.death_count));
+draw_text(32, 48, "Population: " + string(enemies_alive));
 
 //Draw a basic bitch meter
 var lose_scale = lose_meter / lose_total;
@@ -271,9 +281,13 @@ var lose_scale = lose_meter / lose_total;
 //Draw a basic health bar
 
 draw_set_color(c_white);
+draw_text(500, 16, "Remorse");
+
+draw_set_color(c_gray);
 draw_rectangle(500,32,500+(100*lose_scale),48,false);
-draw_set_color(c_silver);
-draw_rectangle(500,32,600,48, true);
+
+draw_set_color(c_white);
+draw_rectangle(500,32,600,48,true);
 </string>
           </argument>
         </arguments>
