@@ -138,7 +138,7 @@ if(spawner_tick % airhorn_frequency == 0 &amp;&amp; airhorn_frequency != 0)
 {
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_AIRHORN;
-    temp_enemy_id.weapon = WEP_SHOTGUN;
+    temp_enemy_id.weapon = WEP_AIRHORN;
 }
 </string>
           </argument>

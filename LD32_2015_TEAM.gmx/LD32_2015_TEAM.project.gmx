@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\bg_loop_snd</sound>
+    <sound>sound\bg_clap_snd</sound>
+    <sound>sound\bg_kick_snd</sound>
+    <sound>sound\airhorn_snd</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_brick</sprite>
     <sprite>sprites\spawner_mask_spr</sprite>
@@ -33,6 +38,7 @@
       <sprite>sprites\knife_hitbox_spr</sprite>
       <sprite>sprites\projectile_spr</sprite>
       <sprite>sprites\rocket_spr</sprite>
+      <sprite>sprites\weapon_airhorn_spr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -74,11 +80,13 @@
       <object>objects\projectile_obj</object>
       <object>objects\weapon_machinegun_obj</object>
       <object>objects\weapon_shotgun_obj</object>
+      <object>objects\weapon_airhorn_obj</object>
     </objects>
     <object>objects\catalouger_obj</object>
     <object>objects\losing_text</object>
     <object>objects\room_generator</object>
     <object>objects\ticker</object>
+    <object>objects\sound_spawner_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\level_room</room>
@@ -88,7 +96,7 @@
     <room>rooms\test_build_room</room>
     <room>rooms\random_test_room</room>
   </rooms>
-  <constants number="42">
+  <constants number="43">
     <constant name="ENM_SPEED">0</constant>
     <constant name="ENM_SPRITE">1</constant>
     <constant name="ENM_ARMOR">2</constant>
@@ -105,6 +113,7 @@
     <constant name="WEP_NUKE">4</constant>
     <constant name="WEP_MELEE">3</constant>
     <constant name="WEP_MACHINEGUN">5</constant>
+    <constant name="WEP_AIRHORN">6</constant>
     <constant name="WEPTAG_SPRITE">0</constant>
     <constant name="WEPTAG_PROJECTILE">1</constant>
     <constant name="WEPTAG_TYPE">2</constant>
