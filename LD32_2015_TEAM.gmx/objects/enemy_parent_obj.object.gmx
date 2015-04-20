@@ -377,7 +377,7 @@ if(other == NULL)
 
 killer = other.creator;
 
-if(is_undefined(other.creator))
+if(!instance_exists(other.creator))
 {
     exit;
 }
@@ -475,7 +475,12 @@ id.killcount++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord("P"))
+            <string>if point_distance(x,y,view_xview[0]+320,view_yview[0]+240) &gt; 1024
+{
+    exit;
+}
+
+if keyboard_check(ord("P"))
 {
     draw_set_alpha(0.25);
     draw_path(path,0,0,true);
