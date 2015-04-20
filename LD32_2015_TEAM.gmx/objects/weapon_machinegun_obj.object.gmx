@@ -26,30 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>tick = 6;
-alarm[0] = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_destroy();
+creator = NULL;
+var angleVar = random_range(-1.5,1.5);
+var dir = point_direction(x,y,player_obj.x,player_obj.y);
+    var o = instance_create(x, y, projectile_obj);
+    
+    with o
+    {
+        direction = dir + angleVar;
+    }
+alarm[0] = 3;
 </string>
           </argument>
         </arguments>
@@ -72,22 +58,21 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if tick &lt;= 0
+            <string>var angleVar = random_range(-1.5,1.5);
+var dir = point_direction(x,y,player_obj.x,player_obj.y);
+    var o = instance_create(x, y, projectile_obj);
+    
+    with o
+    {
+        direction = dir + angleVar;
+    }
+tick -= 1;
+alarm[0] = 3;
+
+if tick &lt;= 0 
 {
-var angleVar = random_range(-10, 10);
-
-with(instance_create(x, y, projectile_obj))
-{
-    direction = image_angle + angleVar;
+instance_destroy();
 }
-
-alarm[1] = 1;
-}else{
-tick -= 1
-}
-
-alarm[0] = 10;
-
 </string>
           </argument>
         </arguments>

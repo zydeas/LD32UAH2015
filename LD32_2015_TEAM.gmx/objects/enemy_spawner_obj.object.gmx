@@ -30,38 +30,14 @@
 //measured in steps
 melee_frequency = 1000;
 single_frequency = 1200;
-nuke_frequency = 1400;
-rocket_frequency = 1600;
+nuke_frequency = 3000;
+rocket_frequency = 5000;
 machine_frequency = 1900;
 shotgun_frequency = 2200;
 airhorn_frequency = 2300;
+minigun_frequency = 8000;
 
 spawner_tick = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//alarm[0] = random_range(240, 360);
-
-//instance_create(x, y, enemy_parent_obj);
 </string>
           </argument>
         </arguments>
@@ -94,6 +70,13 @@ if(spawner_tick % melee_frequency == 0 &amp;&amp; melee_frequency != 0)
     temp_enemy_id = instance_create(x, y, enemy_parent_obj);
     temp_enemy_id.type = ENMTYPE_PIDGEON;
     temp_enemy_id.weapon = WEP_MELEE;
+}
+//spawn for minigunners
+if(spawner_tick % minigun_frequency == 0 &amp;&amp; minigun_frequency != 0)
+{
+    temp_enemy_id = instance_create(x, y, enemy_parent_obj);
+    temp_enemy_id.type = ENMTYPE_VULTURE;
+    temp_enemy_id.weapon = WEP_MINI;
 }
 
 //spawn for singles

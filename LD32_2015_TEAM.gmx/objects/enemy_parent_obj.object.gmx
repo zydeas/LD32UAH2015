@@ -232,7 +232,7 @@ if wepData != NULL
                     with o
                     {
                         direction = other.weapon_aim;
-                        creator = other.id;
+                        creator =  other.id;
                     }
                 }
                 
@@ -358,12 +358,22 @@ if (current_health &gt; 0)
 
 id.killcount++; 
 
+if(is_undefined(other))
+{
+    exit;
+}
+
 if(other == NULL)
 {
     exit;
 }
 
 killer = other.creator;
+
+if(is_undefined(other.creator))
+{
+    exit;
+}
 
 if(other.creator == NULL)
 {
