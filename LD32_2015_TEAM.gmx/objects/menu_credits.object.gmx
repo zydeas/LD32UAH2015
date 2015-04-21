@@ -33,13 +33,16 @@ ds_list_add(Credits, "Ryan Kline");
 ds_list_add(Credits, "Jesse W. Schirmer");
 ds_list_add(Credits, "C.L Kerl");
 ds_list_add(Credits, "Stephanie Clark");
+
 ds_list_add(Credits, "Simone Young");
+
 ds_list_add(Credits, "Chris McClellan");
 ds_list_add(Credits, "Justin Keeton");
 ds_list_add(Credits, "AJ Huey");
 ds_list_add(Credits, "Jess Baiter");
 ds_list_add(Credits, "Zack Maresh");
-ds_list_add(Credits, "Leon Kennedy");
+// ds_list_add(Credits, "Leon Kennedy");
+
 ds_list_add(Credits, "Sounds by freeSFX");
 </string>
           </argument>

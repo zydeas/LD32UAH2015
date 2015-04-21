@@ -103,8 +103,10 @@
     <object>objects\sound_spawner_obj</object>
     <object>objects\restart_button</object>
     <object>objects\healy_beam</object>
-    <object>objects\menu_button_start_obj</object>
-    <object>objects\menu_credits_obj</object>
+    <object>objects\menu_button</object>
+    <object>objects\menu_credits</object>
+    <object>objects\menu_story</object>
+    <object>objects\menu_title</object>
   </objects>
   <rooms name="rooms">
     <rooms name="DO NOT MOVE FROM TOP OF LIST">
