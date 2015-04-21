@@ -44,6 +44,8 @@ ds_list_add(Credits, "Zack Maresh");
 // ds_list_add(Credits, "Leon Kennedy");
 
 ds_list_add(Credits, "Sounds by freeSFX");
+ds_list_add(Credits, "Music by FreeSound.org");
+
 </string>
           </argument>
         </arguments>

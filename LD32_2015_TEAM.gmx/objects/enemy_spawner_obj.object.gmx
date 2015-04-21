@@ -37,7 +37,7 @@ shotgun_frequency = 1800;
 airhorn_frequency = 1337;
 minigun_frequency = 4000;
 
-spawner_tick = 0;
+spawner_tick = 1000 - room_speed;
 </string>
           </argument>
         </arguments>
