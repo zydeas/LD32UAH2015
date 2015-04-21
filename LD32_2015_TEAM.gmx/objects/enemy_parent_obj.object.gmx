@@ -145,40 +145,40 @@ if(!instance_exists(killer))
 {
     if(killer_weapon == WEP_ROCKET)
     {
-        global.deaths[i] = id.enemy_name + " exploded.";
+        global.deaths[i] = string(id.enemy_name) + " exploded.";
     }
     else
     {
-        global.deaths[i] = id.enemy_name + " died.";
+        global.deaths[i] = string(id.enemy_name) + " died.";
     }
 }
 else if(killer_weapon == WEP_MACHINEGUN)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a machine gun.";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a machine gun.";
 }
 else if(killer_weapon == WEP_MELEE)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a knife -- humiliation!";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a knife -- humiliation!";
 }
 else if(killer_weapon == WEP_NUKE)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a bomb.";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a bomb.";
 }
 else if(killer_weapon == WEP_ROCKET)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a rocket.";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a rocket.";
 }
 else if(killer_weapon == WEP_SHOTGUN)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a shotgun.";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a shotgun.";
 }
 else if(killer_weapon == WEP_SINGLESHOT)
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + " with a pistol.";
+    global.deaths[i] = string(killer.enemy_name) + " killed " + string(id.enemy_name) + " with a pistol.";
 }
 else
 {
-    global.deaths[i] = killer.enemy_name + " killed " + id.enemy_name + ".";
+    global.deaths[i] = string(string(killer.enemy_name)) + " killed " + string(string(id.enemy_name)) + ".";
 }
 
 </string>
